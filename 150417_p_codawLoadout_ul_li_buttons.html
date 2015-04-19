@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Jean-Luc Potte: games user-experience, games user research</title>
+		<meta name="description" content="Portfolio of a games user experience designer/user researcher" />
+		<meta name="keywords" content="games user experience designer, games UX designer, games user researcher" />
+		<meta name="author" content="Jean-Luc Potte" />
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="jlpotte_dot_com.css" />
+		<style>
+			body {
+				width:960px;
+				margin-left:auto;
+				margin-right:auto;
+				color:black;
+				font-family: 'Source Sans Pro', sans-serif;
+			}
+
+
+			.mainNav select {
+				width:480px;
+				padding:5px;
+				background:rgb(117,117,117);
+				color:white;
+				border:0;
+				border-radius:0;
+				display:none;
+			}
+
+			h1 {
+				padding:0px;
+				margin-top:32px;
+			}
+
+			#architecture {
+				display:none;
+			}
+
+			#containerDefault {
+				background-color:black;
+				color:white;
+				width:900px;
+				height:525px;
+				margin-left:auto;
+				margin-right:auto;
+			}
+
+			#containerDefault h1 {
+				color:white;
+				position:relative;
+				top:16px;
+				left:38px;
+			}
+
+			#containerNewItems {
+				position:absolute;
+				background-color:grey;
+				color:white;
+				top:240px;
+				left:60px;
+				width:800px;
+				height:400px;
+			}
+
+			ul {float:left;}
+			p {float:left;}
+
+			ul li {
+				background-color:rgba(115,115,115,.6);
+				color:white;
+				list-style: none;
+				border:1px solid #000;
+				width:180px;
+				padding:2px;
+				margin-right:220px;
+			}
+
+			ul li#first {
+				height:70px;
+			}
+
+			ul li#last {
+				height:70px;
+			}
+
+			ul#players {
+				float: left;
+				top:100px;
+				right:80px;
+				margin-right:0px;
+			}
+
+			#inputFooter {
+				position:absolute;
+				top:665px;
+				width:900px;
+				padding:8px;
+				border-top: 1px solid white;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<a href="index.html" class="mainNav">
+				<li>
+					<div class="arrow-left"></div>
+					Home
+				</li>
+			</a>
+		</ul>
+		<p>test</p>
+		<hr>
+		<ul id="architecture">
+			<li id="loadout01">
+				<ul>
+					<li></li>
+				</ul>
+			</li>
+		</ul>	
+		<div id="containerDefault">
+			<h1>Private Match</h1>
+		    <ul>
+	        	<li id="first">New Items</li>
+		        <li>Create a Class</li>
+		        <li>Operator</li>
+		        <li>Armory</li>
+		        <li>Options</li>
+		        <li id="last">Map vote</li>
+		   	</ul>
+		   	<ul id="players">
+		   		<li>player1</li>
+	   			<li>player2</li>
+	   		</ul>
+		   	<div id="inputFooter">press X to pay respect</div>
+		</div>
+	   	<div id="containerNewItems">
+	   		SUPPLY DROP YO
+	   	</div>
+		<script src="jquery-1.11.0.min.js"></script>
+		<script src="codawLoadout.js"></script>
+
+	</body>
+
+</html>

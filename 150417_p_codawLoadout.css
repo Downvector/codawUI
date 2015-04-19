@@ -1,0 +1,88 @@
+body {
+	width:960px;
+	margin-left:auto;
+	margin-right:auto;
+	color:black;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+.mainNav select {
+	width:480px;
+	padding:5px;
+	background:rgb(117,117,117);
+	color:white;
+	border:0;
+	border-radius:0;
+	display:none;
+}
+
+h1 {
+	padding:0px;
+	margin-top:32px;
+}
+
+#architecture {
+	display:none;
+}
+
+#containerDefault {
+	background-color:black;
+	color:white;
+	width:900px;
+	height:525px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#containerDefault h1 {
+	color:white;
+	position:relative;
+	top:16px;
+	left:38px;
+}
+
+#containerNewItems {
+	position:absolute;
+	background-color:grey;
+	color:white;
+	top:240px;
+	left:60px;
+	width:800px;
+	height:400px;
+}
+
+ul {float:left;}
+
+ul li {
+	background-color:rgba(115,115,115,.6);
+	color:white;
+	list-style: none;
+	border:1px solid #000;
+	width:180px;
+	padding:2px;
+	margin-right:220px;
+}
+
+ul li#first {
+	height:70px;
+}
+
+ul li#last {
+	height:70px;
+}
+
+ul#players {
+	float: left;
+	top:100px;
+	right:80px;
+	margin-right:0px;
+}
+
+#inputFooter {
+	position:absolute;
+	top:665px;
+	width:900px;
+	padding:8px;
+	border-top: 1px solid white;
+}
