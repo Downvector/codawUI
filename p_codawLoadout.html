@@ -16,37 +16,41 @@
 			}
 
 			body {
-				background:black;
-				color:white;
-			}
-
-			#mainNav {
 				background:white;
 				color:orange;
-				position:fixed;
-				top:0px;
-				left:0px;
-				padding:10px;
-				border:3px orange solid;
-				width:100%;
+				padding:0px;
+				margin:0px;
+			}
 
+			canvas {
 			}
 
 			a { 
-				border:1px solid black;
 			}
 		</style>
 	</head>
 
 	<body>
-		<div id="mainNav">LeftArrow | Jean-Luc Potte</div>
+		<a href="index.html"><canvas id="backIcon" width="100" height="32"></canvas></a>
+		<div id="mainNav">Jean-Luc Potte</div>
 		<p id="lonely">Test div, lonely paragraph</p>
 		<script>
-				//random test git
 				var keyPressList = {};
+				var backIcon = document.getElementById("backIcon");
+				var context = backIcon.getContext("2d");
+
+				context.beginPath();
+				context.moveTo(40, 16);
+				context.lineTo(0, 16);
+				context.lineTo(8,24)
+				context.moveTo(0,16);
+				context.lineTo(8,8);
+				context.lineWidth=4;
+				context.stroke();
+
+
 				var p = document.createElement('p');
 				p.appendChild(document.createTextNode('more content'));
-				
 				var lone = document.getElementById('lonely');
 				document.body.appendChild(p);
 
