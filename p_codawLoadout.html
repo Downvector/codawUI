@@ -8,93 +8,45 @@
 		<meta name="description" content="Portfolio of a games user experience designer/user researcher" />
 		<meta name="keywords" content="games user experience designer, games UX designer, games user researcher" />
 		<meta name="author" content="Jean-Luc Potte" />
-		<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+		<!--<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>-->
 		<link rel="stylesheet" type="text/css" href="jlpotte_dot_com.css" />
 		<style>
 			*, *:before, *:after {
-			box-sizing: border-box;
+				box-sizing: border-box;
 			}
 
-			a { border:1px solid black;}
-
-			ul { 
-				color: black;
-				list-style-type: none;
+			body {
+				background:black;
+				color:white;
 			}
 
-			li:hover {
-				font-weight:bold;
+			#mainNav {
+				background:white;
+				color:orange;
+				position:fixed;
+				top:0px;
+				left:0px;
+				padding:10px;
+				border:3px orange solid;
+				width:100%;
 			}
 
-			#mainNav > ul {
-				color:pink;
-				visibility:visible;
+			a { 
+				border:1px solid black;
 			}
 		</style>
 	</head>
+
 	<body>
-		<ul>
-			<a href="index.html" class="mainNav">
-				<li>
-					<div class="arrow-left">Home</div>
-				</li>
-			</a>
-		</ul>
-		<hr>
-		<div id="container">
-			<h1>Private Match</h1>
-		    <ul id="mainNav">
-	        	<li>New Items</li>
-		        <li id="createClass">Create a Class</li>
-		        	<ul>
-		        		<li>Loadout01</li>
-		        		<li>Loadout02</li>
-	        			<ul>
-	        				<li>AK74</li>
-	        				<li>Hammond pistol</li>
-	        				<li></li>
-	        			</ul>
-	        		</ul>
-		   	</ul>
-		</div>
-
-		<script src="jquery-1.11.0.min.js"></script>
+		<div id="mainNav">LeftArrow | Jean-Luc Potte</div>
+		<p id="lonely">Test div, lonely paragraph</p>
 		<script>
-			window.addEventListener('load',eventWindowLoaded,false);
-			function eventWindowLoaded() {
-				canvasApp();
-			}
-			$('#createClass').on('click', function(e) {
-				$(this).css('font-size','32px');
-			});
-
-			/*
-			$('li').on('mouseover', function(e) {
-			    $(this).css({
-			    	'border':'1px solid #FF7F24	'
-		    	});
-			});
-
-			$('li').on('mouseout', function() {
-				$(this).css({
-					'border' : '0px solid #000'
-				});
-			});
-
-			$('li').on('click', function() {
-				if ($(this).is("#first")) {
-					appState=2;
-					console.log(appState);
-				} else {
-					appState =1;
-					console.log(appState);
-				}
-			});*/
-
-
-			function canvasApp() {
-				var appState = 0;
 				var keyPressList = {};
+				var p = document.createElement('p');
+				p.appendChild(document.createTextNode('more content'));
+				
+				var lone = document.getElementById('lonely');
+				document.body.appendChild(p);
 
 				document.onkeydown = function(e) {
 			        e=e?e:window.event;
@@ -108,51 +60,14 @@
 			    }
 
 				function inputManager(e) {
-					if(keyPressList[32]==true) {
-						console.log(appState);
-					} //spacebar
-
-			    	if(keyPressList[27]==true) {
-						appState = 0;
-					} //escape
+					if(keyPressList[32]==true) { //spacebar
+					}
+			    	if(keyPressList[27]==true) { //esc.
+					}
 				}
 
 			    function update() {
-					switch (appState) {
-						case 0: //default
-							$("#containerDefault").css('visibility', 'visible');
-							$("#containerNewItems").css('visibility', 'hidden');
-							break;
-
-						case 1: 
-						    break;
-
-						case 2: //newItems
-							$("#containerDefault").css('visibility', 'hidden');
-							$("#containerNewItems").css('visibility', 'visible');
-						    break;
-
-						case 3:
-						    break;
-
-						case 4:
-						    break;
-
-						case 5:
-						    break;
-
-						case 6:
-						    break;
-
-						case 7:
-						    break;
-
-						case 8:
-						    break;
-
-						case 9:
-						    break;
-					}
+			    	//where renaming will occur?
 			    }
 				
 			    function draw() {
@@ -170,7 +85,7 @@
 					draw();
 					window.setTimeout(gameLoop,intervalTime);
 				}
-			}
+			
 		</script>
 	</body>
 </html>
