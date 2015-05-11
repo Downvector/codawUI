@@ -155,6 +155,11 @@
 				'use-strict';
 				var keyPressList = {};
 				var opacityLevel = '0.3';
+
+				document.getElementsByTagName("a").addEventListener("click", function(e) {
+					console.log("you clicked " + e.target);
+					e.preventDefault();
+				});//unfinished
 	
 
 				var backIcon = document.getElementById('backIcon');
