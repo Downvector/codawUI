@@ -2,147 +2,136 @@
 box-sizing: border-box;
 }
 
+@media screen and (max-width: 320px) {
+	html { 
+		background:orange; 
+	}
+} 
+
+@media screen and (min-width:321px) { 
+	html { 
+		background:rgb(213,217,220); 
+	}
+	body {
+		background:white;
+		width:66%;
+		max-width:960px;
+		margin:0 auto;
+	}
+}
+
 body {
-	width:60%;
-	padding:1.5e;
-	margin-left:auto;
-	margin-right:auto;
-	color:black;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size:100%;
-}
-
-.projectFilter select {
-	width:256px;
-	padding:5px;
-	margin-left:704px;
-	background:rgb(89,89,89);
-	color:white;
-	border:0;
-	border-radius:0;
-	display:none;
-}
-
-h1 {
-	text-align:left;
-	padding-left:0px;
-	padding-bottom:0px;
-	padding-top:0px;
-	font-size:112%;
-}
-
-h2 {
-	font-size:100%;
-	font-weight:normal;
-}
-
-p {
-	color:rgb(89,89,89);
-	margin-top:16px;
-	margin-bottom:4px;
-}
-
-#header {
-	padding:0px;
-	margin-top:32px;
-	font-size:124%;
-	color:rgb(0,0,0);
-}
-
-#subheader { 
-	font-size:124%;
-	margin-top:16px;
-	margin-bottom:4px; 
-}
-
-ul {
-	margin-bottom:48px;
-	padding-left:0px;
-}
-
-li { padding:2px;}
-
-li.mainNav {
-	position:relative;
-	list-style:none;
-	width:128px;
-	margin-bottom:6px;
-	padding:2px;
-	padding-left:8px;
-	border: 1px solid rgb(89,89,89);
-}
-
-li.mainNav:hover {
-	background:rgb(89,89,89);
-	color:white;
-}
-
-ol {color:rgb(89,89,89);}
-
-a:visited {
-	color:black;
-}
-
-
-a:hover {
-	text-decoration:underline;
-	color:rgb(96,96,96);
-}
-
-a {
-	color:black;
-}
-
-a.mainNav {
-	text-decoration:none;
-
-}
-
-img.animated {
-	padding-left:20px;
-}
-
-table {
-	border-collapse: collapse;
-}
-
-th { 
-	text-align:left;
-	padding-left:4px;
-	padding-bottom:16px;
-	font-size:109%;
-}
-
-tr {
-		border-bottom-style: solid 1px;
-
-}
-
-td {
-	height:30px;
-	padding:4px;
-	width:312px;
+	padding:0;
+	font-family: 'Open Sans', sans-serif;
+	font-size:1em;
 }
 
 hr {
-	border: 0;
-    height: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, .3);
-    margin-top:36px;
-    margin-bottom:36px;
+	height:0.1em;
+	border:none;
+	background:black;
 }
 
-.arrow-left {
-	border-color: transparent black;
-	border-style: solid;
-	border-width: 8px 16.6px 8px 0px;
-	height: 0px;
-	width: 0px;
-	float:left;
+
+.header {
+	margin: 0;
+	padding: 1em;
+	background:#fff;
+	-webkit-transition: all 0.5s ease-out 0s;
+  	-moz-transition: all 0.5s ease-out 0s;
+	-ms-transition: all 0.5s ease-out 0s;
+	-o-transition: all 0.5s ease-out 0s;
+ 	transition: all 0.5s ease-out 0s;
 }
 
-#homeButton {
-	width:120px;
-	height:32;
-	border: 1px black solid;
+.header:hover {
+	-webkit-opacity: 0.85;
+	-moz-opacity: 0.85;
+	opacity: 0.85;
+
 }
+
+
+.header svg {
+	display:none;
+}
+
+.header.child-page svg{ 
+	display:inline;
+	margin:0;
+	padding:0.3em 1em 0.3em 1em;
+	outline:1px orange dashed;
+}
+
+.header svg:hover { 
+	opacity:0.4;
+}
+
+.header svg:active { 
+	opacity:0.1;
+}
+
+.header h1, h2 {
+	display:inline;
+	margin-left:2em;
+	color:rgb(16,16,16);
+}
+
+
+h2 {
+	color:black;
+	margin-left:3em;
+	font-size:1.6em;
+}
+
+.projects {
+	margin:4em 0 4em 0;
+}
+
+.projects ul {
+	list-style:none;
+	display:inline;
+	padding:0;
+}
+
+.projects h1, li {
+	text-align:center;
+	margin:1.6em 0 0 0;
+}
+
+
+.projects li {
+	padding:0.4em;
+	margin:0.4em auto 0.4em auto;
+	width:66%;
+}
+
+.projects a {
+	color:black;
+	padding:0 2em 0 2em;
+	opacity:0.9;
+}
+
+.projects a:hover {
+	color:white;
+	background:black;
+}
+
+.footer {
+	background:rgb(34,34,34);
+	color:white;
+	height:8em;
+}
+
+.footer a {
+	display:inline-block;
+	margin:2em 1.5%;
+	width:30%;
+	color:white;
+}
+
+.footer a:hover {
+	opacity:0.5;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);

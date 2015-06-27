@@ -11,30 +11,13 @@
 		<!--<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>-->
 		<link rel="stylesheet" type="text/css" href="jlpotte_dot_com.css" />
 		<style>
-			*, *:before, *:after {
-				box-sizing: border-box;
-			}
-
-			@media screen and (orientation: portrait) {
-				img { max-width: 90%; }
-			}
-
-			@media screen and (orientation: landscape) {
-				img { max-height: 90%; }
-			}
-
-			body {
-
-				background:white;
-				color:black;
-			}
-
 			canvas {
 				padding:1.5em;
 			}
 
 			#container {
 				width:100%;
+				outline: 1px dashed red;
 			}
 
 
@@ -114,7 +97,9 @@
 	</head>
 
 	<body>
-		<div><canvas id='backIcon' width='100' height='32'></canvas></div>
+		<div>
+			<canvas id='backIcon' width='100' height='32'></canvas>
+		</div>
 		<div id='container'>
 			<img src='codaw_play-online.png'>
 			<h1>PRIVATE MATCH</h1>
@@ -156,11 +141,6 @@
 				var keyPressList = {};
 				var opacityLevel = '0.3';
 
-				document.getElementsByTagName("a").addEventListener("click", function(e) {
-					console.log("you clicked " + e.target);
-					e.preventDefault();
-				});//unfinished
-	
 
 				var backIcon = document.getElementById('backIcon');
 				var context = backIcon.getContext('2d');
