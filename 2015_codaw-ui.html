@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Jean-Luc Potte: games user-experience, games user research</title>
+		<meta name="description" content="Portfolio of a games user experience designer/user researcher" />
+		<meta name="keywords" content="games user experience designer, UX designer, games user researcher" />
+		<meta name="author" content="Jean-Luc Potte" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+          <link rel="stylesheet" type="text/css" href="jlpotte_dot_com.css" />
+          <style media="screen" type="text/css">
+               body {
+                    height:540px;
+                    background-color:black;
+                    color:white;
+               }
+
+               li {
+                    list-style:none;
+               }
+          </style>
+	</head>
+	<body>
+		<div class='header child-page'>
+			<a href='index.html'>
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="6 6 24 24">
+					<path d="M30 16.5H11.74l8.38-8.38L18 6 6 18l12 12 2.12-2.12-8.38-8.38H30v-3z" fill="rgb(16,16,16)"/>
+				</svg>
+			</a>
+			<h1>Jean-Luc Potte</h1>
+		</div>
+          <ul>
+               <li class='main-weapon'>AK12</li>
+               <li class='attachment'>Red dot sight</li>
+          </ul>
+		<div class='footer'>
+               Footer with link to each other console project
+		</div>
+		<script>
+               'use-strict';
+               var FRAME_RATE=12;
+               var intervalTime = 1000/FRAME_RATE;
+               var keyPressList = [];
+ 
+               document.onkeydown = function(e) {
+                    e=e?e:window.event;
+                    keyPressList[e.keyCode]=true;
+               }
+             
+              document.onkeyup = function(e) {
+                    e=e?e:window.event;
+                    keyPressList[e.keyCode]=false;
+               }
+
+               function update() {
+
+               }
+
+               function draw() {
+             
+                    }
+
+              function checkInputs() {
+                   
+               }
+
+               function gameLoop() {
+                    checkInputs();
+                    update();
+                    draw();
+                    window.setTimeout(gameLoop,intervalTime);// change to requestAnimationFrame
+               }
+
+               gameLoop();    
+		</script>
+	</body>
+</html>
