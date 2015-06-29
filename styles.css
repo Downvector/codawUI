@@ -1,0 +1,45 @@
+*, *:before, *:after {
+box-sizing: border-box;
+}
+
+
+@media screen and (max-width: 320px) {
+	html { 
+		background:orange; 
+	}
+} 
+
+@media screen and (min-width:321px) { 
+	html { 
+		background:#fff; 
+	}
+}
+
+body {
+	padding:0;
+	font-family: 'Open Sans', sans-serif;
+	font-size:1em;
+}
+
+hr {
+	position:relative;
+	border: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+    margin:2em 0 2em 0;
+}
+
+h1 {
+
+}
+
+navigation {
+	display:inline-block;
+	width:20%;
+	/*nav pane next to the content, similar to moby francke website*/
+}
+
+p {
+	/*has to take into account the navigation div on its left*/
+}
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);

@@ -1,83 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 	<head>
 		<meta charset="UTF-8" />
-		<title>Jean-Luc Potte: games user-experience, games user research</title>
-		<meta name="description" content="Portfolio of a games user experience designer/user researcher" />
-		<meta name="keywords" content="games user experience designer, UX designer, games user researcher" />
-		<meta name="author" content="Jean-Luc Potte" />
-
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<link rel="stylesheet" type="text/css" href="jlpotte_dot_com.css" />
-		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<title>Jean-Luc Potte: games user-experience, games user research</title>
+		<meta name="description" content="Portfolio of a games user experience designer/user researcher" />
+		<meta name="keywords" content="games user experience designer, games UX designer, games user researcher" />
+		<meta name="author" content="Jean-Luc Potte" />
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<style media="screen" type="text/css">
+			.logs a, .logs span {
+				display:inline-block;
+				width:50%;
+				background-color:rgb(215,215,215);
+			}
+		</style>		
 	</head>
 	<body>
 		<div class='header'>
-			<a href='index.html'>
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="6 6 24 24">
-					<path d="M30 16.5H11.74l8.38-8.38L18 6 6 18l12 12 2.12-2.12-8.38-8.38H30v-3z" fill="#fff"/>
-				</svg>
-			</a>
-			<h1>Jean-Luc Potte</h1>
+			<h1>jean-luc potte</h1>
+			<p>user-tests, UI prototypes</p>
+			<a>Resume</a>
+			<a>Twitter</a>
+			<a>About</a>
 		</div>
-		<h2>User-tests, UI prototypes</h1>
-		<hr/>
-		<div class='projects'>
-			<h1>Console</h1>
-			<ul>
-				<li><a>Log C</a></li>				
-				<li><a>Call of Duty: Advanced Warfare: loadout prototype</a></li>
-				<li><a>Far Cry 4: Valley of the Yeti DLC</a></li>
-				<li><a>Far Cry 4</a></li>
-				<li><a>The Crew</a></li>
-				<li><a>Watch_Dogs</a></li>
-				<li><a>Data Heist</a></li>
-			</ul>
-			<h1>Computer</h1>
-			<ul>
-				<li><a>GFACE</a></li>
-				<li><a>FLY'N</a></li>
-				<li><a>Krosmaster Arena</a></li>
-				<li><a>Slage</a></li>
-			</ul>
-			<h1>Mobile</h1>
-			<ul>
-				<li><a>Hay and Honor</a></li>
-				<li><a>Data Heist</a></li>
-			</ul>
-			<h1>Installations</h1>
-			<ul>
-				<li><a>Occupy Olympus</a></li>
-				<li><a>KGTC</a></li>
-			</ul>
+		<hr>
+		<h1>Logs</h1>
+		<div class='navigation'>
+			<a href=''>all</a>
+			<a href=''>interaction design</a>
+			<a href=''>user-research</a>
 		</div>
-		<div class='footer'>
-				<a href="">Resume</a>
-				<a href="">About</a>
-				<a href="">Twitter</a>
+		<div class='logs'>
+			<a class='ui'>CODAW UI prototype</a><span>Personal</span>
+			<a class='ui ur'>Secret stuff</a><span>Ubisoft Montreuil</span>
+			<a class='ur'>Far Cry 4: Valley of the Yetis DLC</a><span>Ubisoft Montreuil</span>
+			<a class='ur'>Far Cry 4</a><span>Ubisoft Montreuil</span>
+			<a class='ur'>The Crew</a><span>Ubisoft Montreuil</span>
+			<a class='ur'>Watch_Dogs</a><span>Ubisoft Montreuil</span>
+			<a class='ui ur'>Data Heist</a><span>Student project</span>
+			<a class='ui ur'>GFACE</a><span>Crytek Frankfurt</span>
+			<a class='ui ur'>FLY'N</a><span>Ankama</span>
+			<a class='ui ur'>Krosmaster Arena</a><span>Ankama</span>
+			<a class='ui ur'>Slage</a><span>Ankama</span>
+			<a class='ui ur'>Occupy Olympus</a><span>Student project</span>
+			<a class='ui ur'>KGTC</a><span>Student project</span>
+			<a class='ui ur'>Hay & Honor</a><span>Student project</span>
 		</div>
+		<hr>
+		<h1>About</h1>
+		<p>Last year, was really into Titanfall, KRZ, bla</p>
+		<script src="http://code.jquery.com/jquery.min.js"></script>
 		<script>
 			'use-strict';
-			var li_nodes = document.getElementsByTagName('a');
-			li_nodes[1].setAttribute('href','2015_logC.html');			
-			li_nodes[2].setAttribute('href','2015_codaw-ui.html');
-			li_nodes[3].setAttribute('href','2015_fc4-yeti.html');
-			li_nodes[4].setAttribute('href','2014_fc4.html');
-			li_nodes[5].setAttribute('href','2014_the-crew.html');
-			li_nodes[6].setAttribute('href','2014_w_d.html');
-			li_nodes[7].setAttribute('href','2013_data-heist.html');
-			li_nodes[8].setAttribute('href','2013_gface.html');
-			li_nodes[9].setAttribute('href','2012_flyn.html');
-			li_nodes[10].setAttribute('href','2012_krosmaster.html');
-			li_nodes[11].setAttribute('href','2012_slage.html');
-			li_nodes[12].setAttribute('href','2012_hay-and-honor.html');
-			li_nodes[13].setAttribute('href','2013_data-heist.html');
-			li_nodes[14].setAttribute('href','2012_occupy-olympus.html');
-			li_nodes[15].setAttribute('href','2012_kgtc.html');
-			li_nodes[16].setAttribute('href','cv.html');
-			li_nodes[17].setAttribute('href','2015_about.html');
-			li_nodes[18].setAttribute('href','https://twitter.com/jlpotte/');
+			if (typeof jQuery === 'undefined') {
+				document.write(unescape('jquery.min.js'))
+			};
+
+			var link_nodes = document.getElementsByTagName('a');
+			var ui_projects = document.getElementsByClassName('ui');
+			var ur_projects = document.getElementsByClassName('ur');
+
+
+			for (var i=3; i < 6; i++) {
+				link_nodes[i].addEventListener('click', updateProjects, false);
+				link_nodes[i].setAttribute('id',i);
+			}
+
+			function updateProjects(element, evt) {
+				console.log('ui length: ' + ui_projects.length)
+				if(this.id == 3) {
+					//restore visibilty to ui and ur, enable filter-buttons 2 and 3
+				} else if(this.id == 4) {
+					//hide
+				}
+			}
+
+
+			link_nodes[0].setAttribute('href','cv.html');
+			link_nodes[1].setAttribute('href','https://twitter.com/jlpotte/');
+			link_nodes[2].setAttribute('href','2015_about.html');
+			//3 links are taken by navigation
+			link_nodes[6].setAttribute('href','2015_logC.html');			
+			link_nodes[7].setAttribute('href','');			
+			link_nodes[8].setAttribute('href','2015_codaw-ui.html');
+			link_nodes[9].setAttribute('href','2015_fc4-yeti.html');
+			link_nodes[10].setAttribute('href','2014_fc4.html');
+			link_nodes[11].setAttribute('href','2014_the-crew.html');
+			link_nodes[12].setAttribute('href','2014_w_d.html');
+			link_nodes[13].setAttribute('href','2013_data-heist.html');
+			link_nodes[14].setAttribute('href','2013_gface.html');
+			link_nodes[15].setAttribute('href','2012_flyn.html');
+			link_nodes[16].setAttribute('href','2012_krosmaster.html');
+			link_nodes[17].setAttribute('href','2012_slage.html');
+			link_nodes[18].setAttribute('href','2012_hay-and-honor.html');
+			link_nodes[19].setAttribute('href','2013_data-heist.html');
 		</script>
 	</body>
 </html>
