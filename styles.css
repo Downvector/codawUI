@@ -1,45 +1,103 @@
-*, *:before, *:after {
-box-sizing: border-box;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 
-
-@media screen and (max-width: 320px) {
-	html { 
-		background:orange; 
-	}
-} 
-
-@media screen and (min-width:321px) { 
-	html { 
-		background:#fff; 
-	}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
+
+.grid {
+  margin: 0 auto;
+  width: 960px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.grid,
+.col-one-third,
+.col-two-thirds {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.col-one-third,
+.col-two-thirds  {
+  display: inline-block;
+  vertical-align: top;
+}
+.col-one-third {
+  width: 33.33%;
+}
+.col-two-thirds {
+  width: 66.66%;
+}
+
 
 body {
-	padding:0;
 	font-family: 'Open Sans', sans-serif;
-	font-size:1em;
+}
+
+header {
+	width:66%;
+	margin:0 auto;
+}
+
+header a {
+	border:1px solid grey;
+	border-radius:3px;
 }
 
 hr {
-	position:relative;
 	border: 0;
     border-bottom: 1px solid rgba(0, 0, 0, .3);
-    margin:2em 0 2em 0;
 }
 
 h1 {
-
+	font-size:1.4em;
 }
 
-navigation {
-	display:inline-block;
-	width:20%;
+h2 {
+	font-size:1.2em;
+}
+
+.col-one-third a {
+	display:block;
 	/*nav pane next to the content, similar to moby francke website*/
 }
 
-p {
+section {
 	/*has to take into account the navigation div on its left*/
+}
+
+footer {
+	background-color:#000;
+	color:#fff;
+}
+
+@media screen and  (max-width: 959px) {
+	.col-one-third, .col-two-thirds {
+		display:block;
+	}
 }
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);

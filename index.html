@@ -11,57 +11,124 @@
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="styles.css" />
 		<style media="screen" type="text/css">
-			.logs a, .logs span {
-				display:inline-block;
-				width:50%;
-				background-color:rgb(215,215,215);
+			.col-9-10,.col-1-10, .col-2-3, .col-1-3 {
+				display: inline-block;
+				vertical-align: top;
+				outline:2px grey solid;
+			}
+
+			.col-2-3, .col-1-3 {
+				height:12em;
+			}
+
+			.col-1-10, .col-9-10 {
+				height:18em;
+			}
+
+			.col-1-10 {
+				width:10%;
+			}
+
+			.col-9-10 {
+				width:90%;
+			}
+
+			.col-2-3 {
+				width:66%;
+			}
+
+			.col-1-3 {
+				width:34%;
 			}
 		</style>		
 	</head>
 	<body>
-		<div class='header'>
+		<header>
 			<h1>jean-luc potte</h1>
-			<p>user-tests, UI prototypes</p>
-			<a>Resume</a>
-			<a>Twitter</a>
-			<a>About</a>
-		</div>
+			<h2>user-tests, UI prototypes</h2>
+			<a href=''>Resume</a>
+			<a href=''>Twitter</a>
+			<a href=''>About</a>
+		</header>
 		<hr>
-		<h1>Logs</h1>
-		<div class='navigation'>
-			<a href=''>all</a>
-			<a href=''>interaction design</a>
-			<a href=''>user-research</a>
-		</div>
-		<div class='logs'>
-			<a class='ui'>CODAW UI prototype</a><span>Personal</span>
-			<a class='ui ur'>Secret stuff</a><span>Ubisoft Montreuil</span>
-			<a class='ur'>Far Cry 4: Valley of the Yetis DLC</a><span>Ubisoft Montreuil</span>
-			<a class='ur'>Far Cry 4</a><span>Ubisoft Montreuil</span>
-			<a class='ur'>The Crew</a><span>Ubisoft Montreuil</span>
-			<a class='ur'>Watch_Dogs</a><span>Ubisoft Montreuil</span>
-			<a class='ui ur'>Data Heist</a><span>Student project</span>
-			<a class='ui ur'>GFACE</a><span>Crytek Frankfurt</span>
-			<a class='ui ur'>FLY'N</a><span>Ankama</span>
-			<a class='ui ur'>Krosmaster Arena</a><span>Ankama</span>
-			<a class='ui ur'>Slage</a><span>Ankama</span>
-			<a class='ui ur'>Occupy Olympus</a><span>Student project</span>
-			<a class='ui ur'>KGTC</a><span>Student project</span>
-			<a class='ui ur'>Hay & Honor</a><span>Student project</span>
-		</div>
+		<section class='grid'>
+			<h1>Logs</h1>
+			<section class='col-one-third'>
+				<a href=''>all</a>
+				<a href=''>interaction design</a>
+				<a href=''>user-research</a>
+			</section><!-- navigation
+			--><section class='col-two-thirds'>
+				<a class='ui'>CODAW UI prototype</a><span>Personal</span>
+				<a class='ui ur'>Secret stuff</a><span>Ubisoft Montreuil</span>
+				<a class='ur'>Far Cry 4: Valley of the Yetis DLC</a><span>Ubisoft Montreuil</span>
+				<a class='ur'>Far Cry 4</a><span>Ubisoft Montreuil</span>
+				<a class='ur'>The Crew</a><span>Ubisoft Montreuil</span>
+				<a class='ur'>Watch_Dogs</a><span>Ubisoft Montreuil</span>
+				<a class='ui ur'>Data Heist</a><span>Student project</span>
+				<a class='ui ur'>GFACE</a><span>Crytek Frankfurt</span>
+				<a class='ui ur'>FLY'N</a><span>Ankama</span>
+				<a class='ui ur'>Krosmaster Arena</a><span>Ankama</span>
+				<a class='ui ur'>Slage</a><span>Ankama</span>
+				<a class='ui ur'>Occupy Olympus</a><span>Student project</span>
+				<a class='ui ur'>KGTC</a><span>Student project</span>
+				<a class='ui ur'>Hay & Honor</a><span>Student project</span>
+			</section>
+			<hr>
+			<section class='container'>
+				<section>
+					Pick13 indicator
+				</section>
+				<section class='ak12s'>
+					<section class='col-9-10'>
+						<section class='col-2-3'>
+							AK12
+						</section><!--
+						--><section class='col-1-3'>Perk1</section>
+					</section><!--here main-wpn, side-wpn, perks, exos, wildcards 
+					--><section class='col-1-10'>
+						bloup
+					</section>
+					<section class='inputs-footer'>
+						Ready to start game <span>Friends F1 Firing Range Space Clear F2 Back ESC</span>
+					</section>
+				</section>
+			</section>
+			<hr>
+			<h1>About</h1>
+			<section>
+				Last year, was really into Titanfall, KRZ, bla
+			</section>
+			<h1>Gamepad API test</h1>
+			<section>
+				<div id="gamepadPrompt">Gamepad connected!</div>
+				<div id="gamepadDisplay">id: Xbox 360 Controller (XInput STANDARD GAMEPAD)<br>Button 1: <br>Button 2: <br>Button 3: <br>Button 4: <br>Button 5: <br>Button 6: <br>Button 7: <br>Button 8: <br>Button 9: <br>Button 10: <br>Button 11: <br>Button 12: <br>Button 13: <br>Button 14: <br>Button 15: <br>Button 16: <br>Stick 1: -0.0034943222999572754,-0.039658188819885254<br>Stick 2: -0.015091180801391602,-0.056015849113464355<br></div>
+			</section>
+		</section>
 		<hr>
-		<h1>About</h1>
-		<p>Last year, was really into Titanfall, KRZ, bla</p>
+		<footer>
+			Footer here!
+		</footer>
+
 		<script src="http://code.jquery.com/jquery.min.js"></script>
 		<script>
 			'use-strict';
+			var link_nodes = document.getElementsByTagName('a');
+			var highlightable_sections = document.getElementsByTagName('section');
+			var ui_projects = document.getElementsByClassName('ui');
+			var ur_projects = document.getElementsByClassName('ur');
+
 			if (typeof jQuery === 'undefined') {
 				document.write(unescape('jquery.min.js'))
 			};
 
-			var link_nodes = document.getElementsByTagName('a');
-			var ui_projects = document.getElementsByClassName('ui');
-			var ur_projects = document.getElementsByClassName('ur');
+			//waring: beginning of the navigation cursor logic: on pressing directional arrow, move left right up or down on the grid. 
+			highlightable_sections[0].setAttribute('row-id','0');
+			highlightable_sections[0].setAttribute('col-id','0');
+			highlightable_sections[1].setAttribute('row-id','1');
+			highlightable_sections[1].setAttribute('col-id','1');
+			highlightable_sections[2].setAttribute('row-id','2');
+			highlightable_sections[2].setAttribute('col-id','2');
 
 
 			for (var i=3; i < 6; i++) {
@@ -69,15 +136,7 @@
 				link_nodes[i].setAttribute('id',i);
 			}
 
-			function updateProjects(element, evt) {
-				console.log('ui length: ' + ui_projects.length)
-				if(this.id == 3) {
-					//restore visibilty to ui and ur, enable filter-buttons 2 and 3
-				} else if(this.id == 4) {
-					//hide
-				}
-			}
-
+			//WARING: here a function handles the onclik events for each of the three filter button (show all, hide ur, hide ux)
 
 			link_nodes[0].setAttribute('href','cv.html');
 			link_nodes[1].setAttribute('href','https://twitter.com/jlpotte/');
@@ -97,6 +156,64 @@
 			link_nodes[17].setAttribute('href','2012_slage.html');
 			link_nodes[18].setAttribute('href','2012_hay-and-honor.html');
 			link_nodes[19].setAttribute('href','2013_data-heist.html');
+
+
+			var hasGP = false;
+			var repGP;
+			
+			function canGame() {
+				return "getGamepads" in navigator;
+			}
+
+			function reportOnGamepad() {
+				var gp = navigator.getGamepads()[2]; //WARING: edited to work on home machine, where 0 =usb  headset and 1 = usb receiver
+				var html = "";
+					html += "id: "+gp.id+"<br/>";
+				
+				for(var i=0;i<gp.buttons.length;i++) {
+					html+= "Button "+(i+1)+": ";
+					if(gp.buttons[i].pressed) html+= " pressed";
+					html+= "<br/>";
+				}
+				
+				for(var i=0;i<gp.axes.length; i+=2) {
+					html+= "Stick "+(Math.ceil(i/2)+1)+": "+gp.axes[i]+","+gp.axes[i+1]+"<br/>";
+				}
+				
+				$("#gamepadDisplay").html(html);
+			}
+				
+			$(document).ready(function() {
+
+				if(canGame()) {
+
+					var prompt = "To begin using your gamepad, connect it and press any button!";
+					$("#gamepadPrompt").text(prompt);
+					
+					$(window).on("gamepadconnected", function() {
+						hasGP = true;
+						$("#gamepadPrompt").html("Gamepad connected!");
+						console.log("connection event");
+						repGP = window.setInterval(reportOnGamepad,100);
+					});
+
+					$(window).on("gamepaddisconnected", function() {
+						console.log("disconnection event");
+						$("#gamepadPrompt").text(prompt);
+						window.clearInterval(repGP);
+					});
+
+
+					var checkGP = window.setInterval(function() { 	//sets up an interval for Chrome
+						console.log('checkGP');
+						if(navigator.getGamepads()[0]) {
+							if(!hasGP) $(window).trigger("gamepadconnected");
+							window.clearInterval(checkGP);
+						}
+					}, 500);
+				}
+				
+			});
 		</script>
 	</body>
 </html>
