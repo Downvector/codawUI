@@ -17,7 +17,7 @@
 				outline:2px grey solid;
 			}
 
-			.col-2-3, .col-1-3 {
+			.col-2-3, .col-1-3 { 
 				height:12em;
 			}
 
@@ -39,6 +39,10 @@
 
 			.col-1-3 {
 				width:34%;
+			}
+
+			.ur.ui, .ur, .ui {
+				display:block;
 			}
 		</style>		
 	</head>
@@ -129,12 +133,6 @@
 			highlightable_sections[1].setAttribute('col-id','1');
 			highlightable_sections[2].setAttribute('row-id','2');
 			highlightable_sections[2].setAttribute('col-id','2');
-
-
-			for (var i=3; i < 6; i++) {
-				link_nodes[i].addEventListener('click', updateProjects, false);
-				link_nodes[i].setAttribute('id',i);
-			}
 
 			//WARING: here a function handles the onclik events for each of the three filter button (show all, hide ur, hide ux)
 

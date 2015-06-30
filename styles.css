@@ -58,8 +58,9 @@ body {
 }
 
 header {
-	width:66%;
+	width:55%;
 	margin:0 auto;
+	padding:3em;
 }
 
 header a {
