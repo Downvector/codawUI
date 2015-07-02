@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Jean-Luc Potte: games user-experience, games user research</title>
+		<meta name="description" content="Portfolio of a games user experience designer/user researcher" />
+		<meta name="keywords" content="games user experience designer, games UX designer, games user researcher" />
+		<meta name="author" content="Jean-Luc Potte" />
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<style media="screen" type="text/css">
+			.ur.ui, .ur, .ui {
+				display:block;
+			}
+		</style>		
+	</head>
+	<body>
+		<header>
+			<h1>jean-luc potte</h1>
+			<h2>user-tests, UI prototypes</h2>
+			<a href=''>Resume</a>
+			<a href=''>Twitter</a>
+			<a href=''>About</a>
+		</header>
+		<hr>
+		<section class='grid'>
+			<h1>Shop interactions</h1>
+		<section class='col-one-third'>
+				bip
+			</section><!-- navigation
+		--><section class='col-two-thirds'>
+			bloup
+		</section>
+
+		<div id="gamepadPrompt">
+			Gamepad connected!
+		</div>
+		<div id="gamepadDisplay">
+			id: Xbox 360 Controller (XInput STANDARD GAMEPAD)<br>Button 1: <br>Button 2: <br>Button 3: <br>Button 4: <br>Button 5: <br>Button 6: <br>Button 7: <br>Button 8: <br>Button 9: <br>Button 10: <br>Button 11: <br>Button 12: <br>Button 13: <br>Button 14: <br>Button 15: <br>Button 16: <br>Stick 1: -0.0034943222999572754,-0.039658188819885254<br>Stick 2: -0.015091180801391602,-0.056015849113464355<br>
+		</div>
+		<hr>
+		<footer>
+			<a href=''>Footer here!</a>
+		</footer>
+
+		<script src="http://code.jquery.com/jquery.min.js"></script>
+		<script>
+			'use-strict';
+			var hasGP = false;
+			var repGP;
+			var link_nodes = document.getElementsByTagName('a');
+			
+			if (typeof jQuery === 'undefined') {
+				document.write(unescape('jquery.min.js'))
+			};
+
+			document.getElementsByTagName('a')[3].addEventListener('click', createDiv, false);
+			
+			function createDiv(){
+				var divTag = document.createElement("div");
+				divTag.id = "div1";
+				divTag.setAttribute("align","center");
+				divTag.style.border = "1px solid #ccc";
+				divTag.textContent = Date();
+				document.body.appendChild(divTag); //waring needs to adapt to the gamepad API draw loop
+			}
+
+
+			function canGame() {
+				return "getGamepads" in navigator;
+			}
+
+			function reportOnGamepad() {
+				var gp = navigator.getGamepads()[0];
+				var html = "";
+				html += "id: "+gp.id+"<br/>";
+
+				for(var i=0;i<gp.buttons.length;i++) {
+					html+= "Button "+(i+1)+": ";
+					if(gp.buttons[i].pressed) html+= " pressed";
+					html+= "<br/>";
+				}
+
+				for(var i=0;i<gp.axes.length; i+=2) {
+					html+= "Stick "+(Math.ceil(i/2)+1)+": "+gp.axes[i]+","+gp.axes[i+1]+"<br/>";
+				}
+
+				$("#gamepadDisplay").html(html);
+			}
+
+			$(document).ready(function() {
+
+			if(canGame()) {
+
+				var prompt = "To begin using your gamepad, connect it and press any button!";
+				$("#gamepadPrompt").text(prompt);
+
+				$(window).on("gamepadconnected", function() {
+					hasGP = true;
+					$("#gamepadPrompt").html("Gamepad connected!");
+					console.log("connection event");
+					repGP = window.setInterval(reportOnGamepad,100);
+				});
+
+				$(window).on("gamepaddisconnected", function() {
+					console.log("disconnection event");
+					$("#gamepadPrompt").text(prompt);
+					window.clearInterval(repGP);
+				});
+
+				//setup an interval for Chrome
+				var checkGP = window.setInterval(function() {
+					console.log('checkGP');
+					if(navigator.getGamepads()[0]) {
+					if(!hasGP) $(window).trigger("gamepadconnected");
+					window.clearInterval(checkGP);
+					}
+				}, 500);
+			}
+
+			});
+			/*for(i=3; i<6; i++) {
+				link_nodes[i].addEventListener('click', filterProjects, false);				
+			}
+
+			function filterProjects(e) {
+				var projects = document.querySelectorAll('.col-two-thirds a');
+				var ui_projects = document.getElementsByClassName('ui');
+				var ur_projects = document.getElementsByClassName('ur');				
+				e.preventDefault();
+
+				if(e.button == 0) {
+					switch(this.innerHTML) {
+						case 'all':
+							console.log('first filter clicked!');
+
+							for(i=0; i<projects.length;i++) projects[i].style.visibility = 'visible';
+							break;
+						case 'interaction design':
+							console.log('second filter clicked!');
+							for(i=0; i<ur_projects.length;i++) ur_projects[i].style.visibility = 'collapse';
+							for(i=0; i<ui_projects.length;i++) ui_projects[i].style.visibility = 'visible';
+							break;
+						case 'user-research':
+							console.log('third filter clicked!');
+							for(i=0; i<ui_projects.length;i++) ui_projects[i].style.visibility = 'collapse';
+							for(i=0; i<ur_projects.length;i++) ur_projects[i].style.visibility = 'visible';
+							break;
+					}
+				}
+			}*/
+		</script>
+	</body>
+</html>
