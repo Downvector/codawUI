@@ -14,6 +14,15 @@
 			.ur.ui, .ur, .ui {
 				display:block;
 			}
+
+			.col-one-fourth a{
+				display: block;
+				max-width:4em;
+			}
+
+			.col-three-fourths > * {
+				outline:1px grey dashed;
+			}
 		</style>		
 	</head>
 	<body>
@@ -27,12 +36,12 @@
 		<hr>
 		<section class='grid'>
 			<h1>Logs</h1>
-			<section class='col-one-third'>
+			<section class='col-one-fourth'>
 				<a class='filter'>all</a>
 				<a class='filter'>interaction design</a>
 				<a class='filter'>user-research</a>
 			</section><!-- navigation
-			--><section class='col-two-thirds'>
+			--><section class='col-three-fourths'>
 				<a class='ui'>Proof of concept prototyping</a><span>Personal</span>
 				<div class='ur'>Secret stuffUbisoft Montreuil</div>
 				<a class='ur'>Far Cry 4: Valley of the Yetis DLC</a><span>Ubisoft Montreuil</span>
@@ -49,26 +58,6 @@
 				<a class='ui ur'>Hay & Honor</a><span>Student project</span>
 			</section>
 			<hr>
-			<section class='container'>
-				<section>
-					Pick13 indicator
-				</section>
-				<section class='ak12s'>
-					<section class='col-9-10'>
-						<section class='col-two-thirds'>
-							AK12
-						</section><!--
-						--><section class='col-one-third'>Perk1</section>
-					</section><!--here main-wpn, side-wpn, perks, exos, wildcards 
-					--><section class='col-1-10'>
-						bloup
-					</section>
-					<section class='inputs-footer'>
-						Ready to start game <span>Friends F1 Firing Range Space Clear F2 Back ESC</span>
-					</section>
-				</section>
-			</section>
-			<hr>
 			<h1><a>About</a></h1>
 			<section>
 				Last year, was really into Titanfall, KRZ, bla
@@ -80,6 +69,7 @@
 		</footer>
 
 		<script src="http://code.jquery.com/jquery.min.js"></script>
+		<script src="jquery.min.js"></script>
 		<script>
 			'use-strict';
 			var link_nodes = document.getElementsByTagName('a');
@@ -114,7 +104,7 @@
 			}
 
 			function filterProjects(e) {
-				var projects = document.querySelectorAll('.col-two-thirds a');
+				var projects = document.querySelectorAll('.col-three-fourths a');
 				var ui_projects = document.getElementsByClassName('ui');
 				var ur_projects = document.getElementsByClassName('ur');				
 				e.preventDefault();
