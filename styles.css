@@ -84,9 +84,16 @@ body {
 }
 
 header {
-	width:55%;
-	margin:0 auto;
+	height:12em;
+	max-width:60%;
+	margin: 0 auto;
 	padding:3em;
+	text-align: center;
+
+}
+
+header > * {
+	margin: 0.5em 1em;
 }
 
 a {
@@ -100,11 +107,13 @@ a:hover {
 }
 
 hr {
+	margin:1em 0;
 	border: 0;
     border-bottom: 1px solid rgba(0, 0, 0, .3);
 }
 
 h1 {
+	margin: 0 1em;
 	font-size:1.4em;
 }
 

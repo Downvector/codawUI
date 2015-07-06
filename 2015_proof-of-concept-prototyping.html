@@ -11,23 +11,41 @@
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="styles.css" />
 		<style media="screen" type="text/css">
-			h1 {
-				margin-bottom:1.4em;			
+			.grid {
+				margin:0 auto;
+				background-image: url('http://image.noelshack.com/fichiers/2013/24/1371178394-each-village-in-skellige-varies-in-population-and-architecture-offering-a-new-experience.jpg');
+				background-size: 1280px 720px;
 			}
 
-			.grid {
-				height:1024px;
-				width:360px;
-				margin:0;
-				outline:1px dashed grey;
+			.grid > * {
+				display:'';
+				background-color:black;
+				color:white;
+				width:16%;
+				margin-left:8%;
+				padding: 0.2em 0;
+				text-align: center;
+				opacity:0.95;
 			}
 
 			.ur.ui, .ur, .ui {
 				display:block;
 			}
 
-			.default {
-				background-color:pink;
+			.submenu {
+				position:absolute;
+				background-color:black;
+				color:pink;
+				width:800px;
+				height:640px;
+				top:320px;
+				left:500px;
+			}
+
+
+			.active {
+				border:1px rgb(160,142,81) solid;
+				color:rgb(160,142,81);
 			}
 		</style>		
 	</head>
@@ -35,22 +53,19 @@
 		<header>
 			<h1>jean-luc potte</h1>
 			<h2>user-tests, UI prototypes</h2>
-			<a href=''>Resume</a>
-			<a href=''>Twitter</a>
-			<a href=''>About</a>
+			<a href='index.html'>Projects</a>
+			<a href='https://dl.dropboxusercontent.com/u/6069526/JeanLucPotte_CV.pdf'>Resume</a>
+			<a href='https://www.twitter.com/jlpotte/'>Twitter</a>
 		</header>
 		<hr>
-		<h1>Shop on mobile</h1>
+		<h1>Pause Menu - XOne</h1>
 		<section class='grid'>
-			<section class='default row-1 col-one-third' height='8em'>
-				empty
-			</section><!-- navigation
-		--><section class='col-two-thirds'>
-				resource indicator $$
+			<section>
+				<img src='http://overmental.com/wp-content/uploads/2015/05/The-Witcher-3-Wild-Hunt-logo-790x435.jpg' width='100%'></img>
 			</section>
 		</section>
 		<hr>
-		<h1>Shop on console</h1>
+		<h1>Gamepad detection</h1>		
 		<div id="gamepadPrompt">
 			Gamepad connected!
 		</div>
@@ -63,16 +78,61 @@
 			'use-strict';
 			var hasGP = false;
 			var repGP;
-			var link_nodes = document.getElementsByTagName('a');
+			var cursor_pos = 0;
+			var items = ['RESUME', 'SAVE GAME', 'LOAD GAME', 'OPTIONS', 'TUTORIALS', 'GWENT DECK', 'QUIT TO MAIN MENU', 'EXIT'];
+			var game_paused = true;
+			document.getElementsByClassName('grid')[0].style.width = '1280px';
+			document.getElementsByClassName('grid')[0].style.height = '720px';
 			
 			if (typeof jQuery === 'undefined') {
 				document.write(unescape('jquery.min.js'))
 			};
 
-			document.getElementsByClassName('grid')[0].addEventListener('click', createDiv, false);
-			document.getElementsByTagName('section')[1].style.height = '8em';
+			for(var i=0; i <items.length; i++) {
+				createSection(items[i]);
+				document.getElementsByTagName('section')[i].addEventListener('click', openSubmenu, false);
+			}
+
+			var section = document.createElement('section');
+			section.classList.add('default');
+			section.style.height = '23.2em';
+			document.getElementsByClassName("grid")[0].appendChild(section);
+			document.getElementsByTagName('section')[2].classList.add('active');
+
+			function update() {
+				for(var i=0; i<items.length; i++) {
+					document.getElementsByTagName('section')[2+i].classList.remove('active');
+					document.getElementsByTagName('section')[2+cursor_pos].classList.add('active');
+				}
+				var pause_items = document.getElementsByTagName('section');
+					for (var i = 1; i< 11; i++) {
+						if(game_paused) {
+							pause_items[i].style.display = '';
+						} else {
+						pause_items[i].style.display = 'none';
+					}
+				}
+			}
+
+			function openSubmenu() {
+				var active_item = items[cursor_pos];
+				switch (active_item) {
+					case 'RESUME': 
+						game_paused = false;
+						console.log('resume game start');
+						//section .submenu[i] display= '';
+						break;
+					case 'SAVE GAME':
+						console.log('game save subemnu');	
+						createSubMenu('SAVE GAME');
+				}
+			}
 			
-			function createDiv(){
+			function createSection(text){
+				var section = document.createElement('section');
+				section.classList.add('default');
+				section.appendChild(document.createTextNode(text));
+				document.getElementsByClassName("grid")[0].appendChild(section);
 				/*var divTag = document.createElement("div");
 				divTag.id = "div1";
 				divTag.setAttribute("align","center");
@@ -80,17 +140,17 @@
 				divTag.textContent = 'noob';
 				document.body.appendChild(divTag);
 				document.getElementsByTagName('section')[1].innerHTML += '<h1>SUP BRAH</h1>'*/
-				var section = document.createElement('section');
-				section.classList.add('col-one-tenth', 'default');
-				section.appendChild(document.createTextNode("more content"));
-				document.getElementsByClassName("grid")[0].appendChild(section);
-
-				var section_count = document.getElementsByTagName('section').length;
-				console.log(section_count);
-				if (section_count > 6) {
+				/*if (section_count > 6) {
 					var c = document.getElementsByTagName('section')[1];
 					c.parentNode.removeChild(c);
-				}// now make it a loop that remove all children that have the "screen A class"
+				}*/ 
+			}
+
+			function createSubMenu(text) {
+				var subMenu = document.createElement('div');
+				subMenu.classList.add('submenu')
+				subMenu.appendChild(document.createTextNode(text));
+				document.getElementsByClassName("grid")[0].appendChild(subMenu);				
 			}
 
 			function canGame() {
@@ -98,7 +158,7 @@
 			}
 
 			function reportOnGamepad() {
-				var gp = navigator.getGamepads()[0];
+				var gp = navigator.getGamepads()[0]; //WARING FIDDLE WITH THIS INTEGER IN CASE THE GAMEPAD IS NOT DETECTED! this is an array of each usb devices currently detected by windows, your pad is in it somewhere
 				var html = "";
 				html += "id: "+gp.id+"<br/>";
 
@@ -113,6 +173,22 @@
 				}
 
 				$("#gamepadDisplay").html(html);
+
+
+				if(gp.axes[1] <= -0.4 || gp.buttons[12].pressed) {
+					if (cursor_pos > 0) { cursor_pos-- } else { cursor_pos = 7}
+				} else if (gp.axes[1] >= 0.4 || gp.buttons[13].pressed) {
+					if (cursor_pos < 7) { cursor_pos++ } else { cursor_pos = 0}
+				}
+
+				if(gp.buttons[9].pressed || (gp.buttons[1].pressed && game_paused)) {
+					game_paused = !game_paused;
+					console.log(game_paused);
+				} else if(gp.buttons[0].pressed && game_paused) {
+					openSubmenu();
+				} 
+
+				update();
 			}
 
 			$(document).ready(function() {
