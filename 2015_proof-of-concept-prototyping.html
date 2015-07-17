@@ -8,7 +8,6 @@
 		<meta name="description" content="Portfolio of a games user experience designer/user researcher" />
 		<meta name="keywords" content="games user experience designer, games UX designer, games user researcher" />
 		<meta name="author" content="Jean-Luc Potte" />
-		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="styles.css" />
 		<style media="screen" type="text/css">
 			.grid {
@@ -51,7 +50,7 @@
 	</head>
 	<body>
 		<header>
-			<h1>jean-luc potte</h1>
+			<h1>Jean-Luc Potte</h1>
 			<h2>user-tests, UI prototypes</h2>
 			<a href='index.html'>Projects</a>
 			<a href='https://dl.dropboxusercontent.com/u/6069526/JeanLucPotte_CV.pdf'>Resume</a>
@@ -133,17 +132,6 @@
 				section.classList.add('default');
 				section.appendChild(document.createTextNode(text));
 				document.getElementsByClassName("grid")[0].appendChild(section);
-				/*var divTag = document.createElement("div");
-				divTag.id = "div1";
-				divTag.setAttribute("align","center");
-				divTag.style.border = "1px solid #ccc";
-				divTag.textContent = 'noob';
-				document.body.appendChild(divTag);
-				document.getElementsByTagName('section')[1].innerHTML += '<h1>SUP BRAH</h1>'*/
-				/*if (section_count > 6) {
-					var c = document.getElementsByTagName('section')[1];
-					c.parentNode.removeChild(c);
-				}*/ 
 			}
 
 			function createSubMenu(text) {
@@ -222,37 +210,6 @@
 				}
 
 			});
-
-			/*for(i=3; i<6; i++) {
-				link_nodes[i].addEventListener('click', filterProjects, false);				
-			}
-
-			function filterProjects(e) {
-				var projects = document.querySelectorAll('.col-two-thirds a');
-				var ui_projects = document.getElementsByClassName('ui');
-				var ur_projects = document.getElementsByClassName('ur');				
-				e.preventDefault();
-
-				if(e.button == 0) {
-					switch(this.innerHTML) {
-						case 'all':
-							console.log('first filter clicked!');
-
-							for(i=0; i<projects.length;i++) projects[i].style.visibility = 'visible';
-							break;
-						case 'interaction design':
-							console.log('second filter clicked!');
-							for(i=0; i<ur_projects.length;i++) ur_projects[i].style.visibility = 'collapse';
-							for(i=0; i<ui_projects.length;i++) ui_projects[i].style.visibility = 'visible';
-							break;
-						case 'user-research':
-							console.log('third filter clicked!');
-							for(i=0; i<ui_projects.length;i++) ui_projects[i].style.visibility = 'collapse';
-							for(i=0; i<ur_projects.length;i++) ur_projects[i].style.visibility = 'visible';
-							break;
-					}
-				}
-			}*/
 		</script>
 	</body>
 </html>

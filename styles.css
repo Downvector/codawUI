@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Quicksand|Open+Sans);
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -27,22 +29,13 @@ time, mark, audio, video {
           box-sizing: border-box;
 }
 
-.grid {
-  margin: 0 auto;
-  width: 960px;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
 .col-9-10,.col-1-10, .col-two-thirds, .col-one-third {
 	display: inline-block;
 	vertical-align: top;
 }
 
-.grid {
-	padding-left: 15px;
-	padding-right: 15px;
-}
+
+.col-one-half,
 .col-one-third,
 .col-two-thirds,
 .col-one-fourth,
@@ -51,8 +44,12 @@ time, mark, audio, video {
 .col-nine-tenths  {
 	display: inline-block;
 	vertical-align: top;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+.col-one-half {
+	width:49.45%;
 }
 
 .col-one-third {
@@ -84,10 +81,7 @@ body {
 }
 
 header {
-	height:12em;
-	max-width:60%;
-	margin: 0 auto;
-	padding:3em;
+	padding:1.6em;
 	text-align: center;
 
 }
@@ -96,25 +90,51 @@ header > * {
 	margin: 0.5em 1em;
 }
 
+header h2 { 
+	font-size:1em;
+	color:rgb(117,117,117);
+	padding:0.4em;
+}
+
+header a {
+	font-size:1.1em;
+		color:black;
+}
+
 a {
 	/*border:1px solid grey;
 	border-radius:3px;  souncloud style*/
-	color:grey;
+
+	text-decoration: none;
+	padding:0.8em;
+}
+
+a:active {
+	opacity:0.2;
 }
 
 a:hover {
-	opacity:0.4;
+	color:black;
+}
+
+a:visited {
+	color:rgb(117,117,117);
 }
 
 hr {
-	margin:1em 0;
+	margin:1em 0 4em 0;
 	border: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, .3);
+    border-bottom: 1px solid rgb(244,244,244);
 }
 
 h1 {
 	margin: 0 1em;
-	font-size:1.4em;
+	font-size:2em;
+	font-family: 'Quicksand', sans-serif;
+}
+
+section h1 {
+	color:rgb(117,117,117);
 }
 
 h2 {
@@ -126,4 +146,3 @@ footer {
 	color:#fff;
 }
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
