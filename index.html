@@ -41,11 +41,9 @@
 				border-right:2em solid white;
 				color:white;
 				background-color: rgb(117,117,117);
+				font-size:20px;
+				min-height:260px;
 			}
-
-			.test1 { background-color: pink;}
-			.test2 { background-color: red;}
-			.test3 { background-color: purple;}
 
 			@media screen and (max-width:768px) {
 				body {
@@ -54,7 +52,6 @@
 					width:100%;
 				}
 			}
-
 		</style>		
 	</head>
 	<body>
@@ -150,7 +147,11 @@
 
 			for(var i = 0; i < document.getElementsByTagName('section').length; i++) { //layout debug
 				//document.getElementsByTagName('section')[i].innerHTML += 'sectionID :' + i;
-				document.getElementsByTagName('section')[i].style.outline = '1px dashed rgb(232,232,232)';
+				//document.getElementsByTagName('section')[i].style.outline = '1px dashed rgb(232,232,232)';
+			}
+
+			document.getElementsByTagName('section')[1].addEventListener('hover', projectsHover, false) {
+				//waring
 			}
 
 			/*for(i=3; i<6; i++) {

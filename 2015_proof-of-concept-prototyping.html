@@ -146,7 +146,7 @@
 			}
 
 			function reportOnGamepad() {
-				var gp = navigator.getGamepads()[0]; //WARING FIDDLE WITH THIS INTEGER IN CASE THE GAMEPAD IS NOT DETECTED! this is an array of each usb devices currently detected by windows, your pad is in it somewhere
+				var gp = navigator.getGamepads()[1]; //WARING FIDDLE WITH THIS INTEGER IN CASE THE GAMEPAD IS NOT DETECTED! this is an array of each usb devices currently detected by windows, your pad is in it somewhere
 				var html = "";
 				html += "id: "+gp.id+"<br/>";
 
@@ -198,8 +198,7 @@
 						$("#gamepadPrompt").text(prompt);
 						window.clearInterval(repGP);
 					});
-
-					//setup an interval for Chrome
+					
 					var checkGP = window.setInterval(function() {
 						console.log('checkGP');
 						if(navigator.getGamepads()[0]) {
