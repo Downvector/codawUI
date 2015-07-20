@@ -9,10 +9,11 @@
 		<meta name="keywords" content="games user experience designer, games UX designer, games user researcher" />
 		<meta name="author" content="Jean-Luc Potte" />
 		<link rel="stylesheet" type="text/css" href="styles.css" />
+				<!--background-image: url('http://image.noelshack.com/fichiers/2013/24/1371178394-each-village-in-skellige-varies-in-population-and-architecture-offering-a-new-experience.jpg');-->
 		<style media="screen" type="text/css">
 			.grid {
 				margin:0 auto;
-				background-image: url('http://image.noelshack.com/fichiers/2013/24/1371178394-each-village-in-skellige-varies-in-population-and-architecture-offering-a-new-experience.jpg');
+				background-image: url('1371178394-each-village-in-skellige-varies-in-population-and-architecture-offering-a-new-experience.jpg');
 				background-size: 1280px 720px;
 			}
 
@@ -146,7 +147,7 @@
 			}
 
 			function reportOnGamepad() {
-				var gp = navigator.getGamepads()[1]; //WARING FIDDLE WITH THIS INTEGER IN CASE THE GAMEPAD IS NOT DETECTED! this is an array of each usb devices currently detected by windows, your pad is in it somewhere
+				var gp = navigator.getGamepads()[0]; //WARING FIDDLE WITH THIS INTEGER IN CASE THE GAMEPAD IS NOT DETECTED! this is an array of each usb devices currently detected by windows, your pad is in it somewhere
 				var html = "";
 				html += "id: "+gp.id+"<br/>";
 
