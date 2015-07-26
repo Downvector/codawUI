@@ -4,9 +4,9 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<title>Jean-Luc Potte: games user-experience, games user research</title>
-		<meta name="description" content="Portfolio of a games ux designer/user researcher" />
-		<meta name="keywords" content="games ux designer, games UX designer, games user researcher" />
+		<title>Jean-Luc Potte: games user-experience, games user-testing</title>
+		<meta name="description" content="Portfolio of a games ux designer/user-testinger" />
+		<meta name="keywords" content="games ux designer, games UX designer, games user-testinger" />
 		<meta name="author" content="Jean-Luc Potte" />
 		<link rel="stylesheet" type="text/css" href="styles.css" />
 		<style media="screen" type="text/css">
@@ -14,20 +14,29 @@
 			}
 
 			.ur.ui, .ur, .ui {
-				display:block;
+			}
+
+			.col-one-fifth {
+				width:20%;
+			}
+
+			.col-two-fifths {
+				width:40%;
+			}
+
+			.col-three-tenths {
+				width:30%;
 			}
 
 			.col-three-fourths > *  {
-				height:3.5em;
+				padding-top: 1.2em;
+				padding-bottom: 1.2em;
 			}			
 
 			.col-one-fourth a {
 				display:block;
 			}
 
-			.col-three-fourths span, .col-three-fourths a {
-				display:inline;
-			}
 
 			.col-one-sixth {
 				display:inline-block;
@@ -52,12 +61,34 @@
 					width:100%;
 				}
 			}
+
+			.col-two-thirds > .col-one-fourth {
+				color:rgb(117,117,117);
+				position:relative;
+				right:-11.4em;
+				top:2.2em;
+				text-align: right;
+			}
+
+			.col-two-thirds > .col-one-fourth > * {
+				width:8em;
+				background-color:rgb(242,242,242);
+				color: rgb(117,117,117);
+				margin:0.05em;
+			}
+
+			.active {
+				color:black;
+				background-color:white;
+				outline:1px solid rgb(117,117,117);
+				position:inherit;
+				right:-1em;
+			}
 		</style>		
 	</head>
 	<body>
 		<header>
 			<h1>Jean-Luc Potte</h1>
-			<h2>user-tests, UI prototypes</h2>
 			<a href='index.html'>Projects</a>
 			<a href='https://dl.dropboxusercontent.com/u/6069526/JeanLucPotte_CV.pdf/'>Resume</a> 
 			<a href='https://twitter.com/jlpotte/'>Twitter</a> 
@@ -68,7 +99,7 @@
 		</section><!--
 		--><section class='col-two-thirds'>
 				<section class='col-one-fourth'>
-					<a class='filter'>All</a>
+					<a class='filter active'>All</a>
 					<a class='filter'>Console</a>
 					<a class='filter'>Computer</a>
 					<a class='filter'>Mobile</a>
@@ -84,20 +115,17 @@
 			<h1>The way I contribute</h1>
 		</section><!--
 		--><section class='col-two-thirds'>
-			<section class='col-one-half tasks'>
-				<p>One type of tasks I am used to is to take charge of the game's interaction system. Example of deliverables are: Interaction design documents, wireframes, interaction prototypes. </p>
-				<p>I have a cumulated experience of around 12 months on those tasks (+12months on side projects). </p>
+			<section class='col-one-half'>
+				interaction design: 2 projects, user-testing: 4 projects, interaction design + user-testing: 6 projects
 			</section><!--
-			--><section class='col-one-half tasks'>
+			--><section class='col-one-half'>
 					<p>Another type of task I do is user-testing: description-description. Example of deliverables: User-tests reports, user-tests quick info emails, focus groups.</p>
 					<p>So far I had the chance to be part of around 40 tests, and be the lead on 12 tests.</p>
-			</section>
-			<hr>
-			<section class='col-one-forth tasks'>
-				test
-			</section>
+			</section><!--
+		--><section class='col-one-sixth'>
 		</section><!--
 		--><section class='col-one-sixth'>
+			<h1>Example of tasks</h1>
 		</section>
 		<script src="http://code.jquery.com/jquery.min.js"></script>
 		<script src="jquery.min.js"></script>
@@ -108,46 +136,78 @@
 				document.write(unescape('jquery.min.js'))
 			};
 
-			var projects = [
-			'Trackmania Turbo', 'Ubisoft HQ', 'user research',
-			'Far Cry 4: Valley of the Yetis DLC', 'Ubisoft HQ', 'user research',
-			'Far Cry 4', 'Ubisoft HQ', 'user research',
-			'The Crew', 'Ubisoft HQ', 'user research',
-			'Watch_Dogs', 'Ubisoft HQ', 'user research',
-			'GFACE', 'Crytek Frankfurt', 'ux design + user research',
-			'Data Heist', 'student project', 'ux design +  user research',
-			'Occupy Olympus', 'side project', 'ux design + user research',
-			'FLY\'N', 'Ankama', 'ux design + user research',
-			'Krosmaster Arena', 'Ankama', 'ux design',
-			'Slage', 'Ankama', 'ux design',
-			'KGTC', 'student project', 'ux design + user research',
-			'Hay and Honor', 'student project', 'ux design + user research'
-			]
-
-			document.getElementsByTagName('section')[1].style.marginBottom = '6em';
 			document.getElementsByClassName('col-three-fourths')[0].style.borderLeft = '1px solid rgb(244,244,244)';
-			document.getElementsByClassName('col-three-fourths')[0].style.paddingLeft = '1em';
+			document.getElementsByClassName('col-three-fourths')[0].style.paddingLeft = '1.2em';
+			document.getElementsByTagName('section')[1].style.marginBottom = '6em';
+
+			var projects = [
+			'Trackmania Turbo', 'Ubisoft HQ', 'user-testing', 'xxx',
+			'Far Cry 4: Valley of the Yetis DLC', 'Ubisoft HQ', 'user-testing', 'xxx',
+			'Far Cry 4', 'Ubisoft HQ', 'user-testing', 'xxx',
+			'The Crew', 'Ubisoft HQ', 'user-testing', 'xxx',
+			'Watch_Dogs', 'Ubisoft HQ', 'user-testing', 'xxx',
+			'GFACE', 'Crytek Frankfurt', 'interaction design + user-testing', 'xxx',
+			'Data Heist', 'student project', 'interaction design +  user-testing', 'xxx',
+			'Occupy Olympus', 'side project', 'interaction design + user-testing', 'xxx',
+			'FLY\'N', 'Ankama', 'interaction design + user-testing', 'xxx',
+			'Krosmaster Arena', 'Ankama', 'interaction design', 'xxx',
+			'Slage', 'Ankama', 'interaction design', 'xxx',
+			'KGTC', 'student project', 'interaction design + user-testing', 'xxx',
+			'Hay and Honor', 'student project', 'interaction design + user-testing', 'xxx',
+			];
 
     		var section, name, clients, tasks,
 			fragment = document.createDocumentFragment();
 
 	        for (var i = 0; i < projects.length; ++i) {
-	            section = document.createElement('section');
-	            section.textContent = projects[i];
-	            
-	            if(i%3 !==  0) {
-	            	section.style.color = 'rgb(117,117,117)';
-	            	section.className = 'col-one-fourth';
-	            } else  {
-	            	section.className = 'col-one-half';
-            	}	            	
-	            fragment.appendChild(section);
+	        	if((i+1)%4 !== 0) {
+		            section = document.createElement('section');
+		            section.innerHTML = projects[i];
+		            
+		            if(i%4 ==  2) {
+		            	section.className = 'col-three-tenths';
+		            	section.style.color = 'rgb(117,117,117)';
+		            } else if (i%4 == 1) {
+		            	section.className = 'col-three-tenths';
+		            	section.style.color = 'rgb(117,117,117)';
+
+		            } else {
+		            	section.className = 'col-two-fifths';
+	            	}	            	
+		            fragment.appendChild(section);
+		        }
 	        }
 			document.getElementsByTagName('section')[3].appendChild(fragment);
 
+
+			for(var i = 4; i < 43; i++) {
+				document.getElementsByTagName('section')[i].addEventListener('mouseover', highlightRow, false);
+				document.getElementsByTagName('section')[i].addEventListener('mouseout', highlightRow, false);
+			}
+
+			function highlightRow() {
+				switch(event.type) {
+					case 'mouseover':
+						event.target.style.outline = '2px solid black';
+						if(event.target.textContent == 'GFACE') {
+							event.target.style.outline = '2px solid red';
+							event.target.style.textDecoration = 'underline';
+							event.target.innerHTML = ' <a href=\'http://www.google.com\'>GFACE go to project page</a>';
+						}
+						break;
+					case 'mouseout':
+						event.target.style.outline = 'none';
+					break;
+				}
+			}
+
 			for(var i = 0; i < document.getElementsByTagName('section').length; i++) { //layout debug
-				//document.getElementsByTagName('section')[i].innerHTML += 'sectionID :' + i;
+			    var r = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+			    var g = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+			    var b = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+				//document.getElementsByTagName('section')[i].style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
 				//document.getElementsByTagName('section')[i].style.outline = '1px dashed rgb(232,232,232)';
+				//document.getElementsByTagName('section')[i].innerHTML += 'sectionID :' + i;
 			}
 
 			//document.getElementsByTagName('section')[1].addEventListener('hover', projectsHover, false) {
@@ -184,6 +244,8 @@
 					}
 				}
 			}*/	
+
+			//to-do: edit section-creating code to put every three section inside a single one, in order to add by row on-hover bhvr
 		</script>
 	</body>
 </html>
