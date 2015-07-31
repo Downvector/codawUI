@@ -10,80 +10,33 @@
 		<meta name="author" content="Jean-Luc Potte" />
 		<link rel="stylesheet" type="text/css" href="styles.css" />
 		<style media="screen" type="text/css">
-			.grid {
-			}
-
-			.ur.ui, .ur, .ui {
-			}
-
-			.col-one-fifth {
-				width:20%;
-			}
-
-			.col-two-fifths {
-				width:40%;
-			}
-
-			.col-three-tenths {
-				width:30%;
-			}
-
-			.col-three-fourths > *  {
-				padding-top: 1.2em;
-				padding-bottom: 1.2em;
-			}			
-
-			.col-one-fourth a {
+			.filters a {
 				display:block;
 			}
 
-
-			.col-one-sixth {
-				display:inline-block;
-				width:16.665%;
-				vertical-align: top;
-			}
-
-			.tasks {
-				padding:1.6em;
-				border-left:2em solid white;
-				border-right:2em solid white;
-				color:white;
-				background-color: rgb(117,117,117);
-				font-size:20px;
-				min-height:260px;
-			}
-
-			@media screen and (max-width:768px) {
-				body {
-				}
-				.col-one-sixth {
-					width:100%;
-				}
-			}
-
-			.col-two-thirds > .col-one-fourth {
-				color:rgb(117,117,117);
-				position:relative;
-				right:-11.4em;
-				top:2.2em;
-				text-align: right;
-			}
-
-			.col-two-thirds > .col-one-fourth > * {
-				width:8em;
+			.filters {
 				background-color:rgb(242,242,242);
 				color: rgb(117,117,117);
 				margin:0.05em;
 			}
 
-			.active {
-				color:black;
-				background-color:white;
-				outline:1px solid rgb(117,117,117);
-				position:inherit;
-				right:-1em;
-			}
+			.sixteen { width:16.665%; }
+			.twenty { width:20%; }
+			.thirty { width:30%; }
+			.forty { width:40%; }
+			.sixtysix { width:66.66%; }
+			.eighty { width:79.8%; }
+
+			table { width:100%; }
+
+			tr { height:3em; }
+			tr:hover { outline:2px solid black; }
+
+			td { vertical-align: middle }; 
+			td:nth-child(2), td:nth-child(3) { color:rgb(117,117,117); };
+			td:nth-child(1) { width:40%; }
+			td:nth-child(2) { width:30%; }
+			td:nth-child(3) { width:30%; }
 		</style>		
 	</head>
 	<body>
@@ -94,39 +47,53 @@
 			<a href='https://twitter.com/jlpotte/'>Twitter</a> 
 		</header>
 		<hr>
-		<section class='col-one-sixth'>
+		<section class='column sixteen'>
 			<h1>Projects</h1>
 		</section><!--
-		--><section class='col-two-thirds'>
-				<section class='col-one-fourth'>
+	 --><section class='column sixtysix'>
+				<section class='column twenty filters'>
 					<a class='filter active'>All</a>
 					<a class='filter'>Console</a>
 					<a class='filter'>Computer</a>
 					<a class='filter'>Mobile</a>
 					<a class='filter'>Installations</a>
 				</section><!-- 
-				--><section class='col-three-fourths'>
-					<!--projects list-->
+			 --><section class='column eighty'>
+					<table>
+						<tr><a href='http://www.google.com/'><td>Trackmania Turbo</td</a><td>Ubisoft HQ</td><td>user-testing</td></tr>
+						<tr><td>Far Cry 4: Valley of the Yetis DLC</td></a><td>Ubisoft HQ</td><td>user-testing</td></tr>
+						<tr><a href='http://www.google.com/'><td>Far Cry 4</td></a><td>Ubisoft HQ</td><td>user-testing</td></tr>
+						<tr><td>The Crew</td><td>Ubisoft HQ</td><td>user-testing</td></tr>
+						<tr><td>Watch_Dogs</td><td>Ubisoft HQ</td><td>user-testing</td></tr>
+						<tr><td>GFACE</td><td>Crytek Frankfurt</td><td>interaction design + user-testing</td></tr>
+						<tr><td>Data Heist</td><td>student project</td><td>interaction design +  user-testing</td></tr>
+						<tr><td>Occupy Olympus</td><td>side project</td><td>interaction design +  user-testing</td></tr>
+						<tr><td>FLY'N</td><td>Ankama</td><td>interaction design +  user-testing</td></tr>
+						<tr><td>Krosmaster Arena</td><td>Ankama</td><td>interaction design</td></tr>
+						<tr><td>Slage</td><td>Ankama</td><td>interaction design</td></tr>
+						<tr><td>KGTC</td><td>student project</td><td>interaction design +  user-testing</td></tr>
+						<tr><td>Hay and Honor</td><td>student project</td><td>interaction design +  user-testing</td></tr>
+					</table>
 				</section>
 		</section><!--
-		--><section class='col-one-sixth'>
+	 --><section class='column sixteen'>
 		</section><!--
-		--><section class='col-one-sixth'>
+	 --><section class='column sixteen'>
 			<h1>The way I contribute</h1>
 		</section><!--
-		--><section class='col-two-thirds'>
-			<section class='col-one-half'>
-				interaction design: 2 projects, user-testing: 4 projects, interaction design + user-testing: 6 projects
-			</section><!--
-			--><section class='col-one-half'>
-					<p>Another type of task I do is user-testing: description-description. Example of deliverables: User-tests reports, user-tests quick info emails, focus groups.</p>
-					<p>So far I had the chance to be part of around 40 tests, and be the lead on 12 tests.</p>
-			</section><!--
-		--><section class='col-one-sixth'>
+	 --><section class='column sixtysix'>
+			<p>task distribution chart here: 4x user-testing, 2x interaction design, 6x both</p>
 		</section><!--
-		--><section class='col-one-sixth'>
-			<h1>Example of tasks</h1>
-		</section>
+	 --><section class='column sixteen'>
+	 	</section><!--
+	 --><section class='column sixteen'>
+			<h1>The things I do</h1>
+		</section><!--
+	 --><section class='column sixtysix'>
+			<p>On left will be interaction design tasks, on right user-testing ones. Will change at random onload.</p>
+		</section><!--
+	 --><section class='column sixteen'>
+	 	</section>
 		<script src="http://code.jquery.com/jquery.min.js"></script>
 		<script src="jquery.min.js"></script>
 		<script>
@@ -135,10 +102,6 @@
 			if (typeof jQuery === 'undefined') {
 				document.write(unescape('jquery.min.js'))
 			};
-
-			document.getElementsByClassName('col-three-fourths')[0].style.borderLeft = '1px solid rgb(244,244,244)';
-			document.getElementsByClassName('col-three-fourths')[0].style.paddingLeft = '1.2em';
-			document.getElementsByTagName('section')[1].style.marginBottom = '6em';
 
 			var projects = [
 			'Trackmania Turbo', 'Ubisoft HQ', 'user-testing', 'xxx',
@@ -156,7 +119,18 @@
 			'Hay and Honor', 'student project', 'interaction design + user-testing', 'xxx',
 			];
 
-    		var section, name, clients, tasks,
+			(function addProjects() {
+	    		for (var i=0; i < projects.length/4; i++) {
+	    			var fragment = document.createDocumentFragment();
+	    		}
+			}());
+
+    		/*
+			document.getElementsByClassName('col-three-fourths')[0].style.borderLeft = '1px solid rgb(244,244,244)';
+			document.getElementsByClassName('col-three-fourths')[0].style.paddingLeft = '1.2em';
+			document.getElementsByTagName('section')[1].style.marginBottom = '6em';
+
+			var section, name, clients, tasks,
 			fragment = document.createDocumentFragment();
 
 	        for (var i = 0; i < projects.length; ++i) {
@@ -199,53 +173,19 @@
 						event.target.style.outline = 'none';
 					break;
 				}
-			}
+			}*/
 
 			for(var i = 0; i < document.getElementsByTagName('section').length; i++) { //layout debug
+				//document.getElementsByTagName('section')[i].style.outline = '1px dashed rgb(232,232,232)';
+				//document.getElementsByTagName('section')[i].innerHTML += 'sectionID :' + i;
 			    var r = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
 			    var g = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
 			    var b = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
 				//document.getElementsByTagName('section')[i].style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
-				//document.getElementsByTagName('section')[i].style.outline = '1px dashed rgb(232,232,232)';
-				//document.getElementsByTagName('section')[i].innerHTML += 'sectionID :' + i;
 			}
-
-			//document.getElementsByTagName('section')[1].addEventListener('hover', projectsHover, false) {
-				//waring
-			
-
 			/*for(i=3; i<6; i++) {
 				link_nodes[i].addEventListener('click', filterProjects, false);				
-			}
-
-			function filterProjects(e) {
-				var projects = document.querySelectorAll('.col-three-fourths a');
-				var ui_projects = document.getElementsByClassName('ui');
-				var ur_projects = document.getElementsByClassName('ur');				
-				e.preventDefault();
-
-				if(e.button == 0) {
-					switch(this.textContent) {
-						case 'all':
-							console.log('first filter clicked!');
-
-							for(i=0; i<projects.length;i++) projects[i].style.visibility = 'visible';
-							break;
-						case 'interaction design':
-							console.log('second filter clicked!');
-							for(i=0; i<ur_projects.length;i++) ur_projects[i].style.visibility = 'collapse';
-							for(i=0; i<ui_projects.length;i++) ui_projects[i].style.visibility = 'visible';
-							break;
-						case 'user-research':
-							console.log('third filter clicked!');
-							for(i=0; i<ui_projects.length;i++) ui_projects[i].style.visibility = 'collapse';
-							for(i=0; i<ur_projects.length;i++) ur_projects[i].style.visibility = 'visible';
-							break;
-					}
-				}
-			}*/	
-
-			//to-do: edit section-creating code to put every three section inside a single one, in order to add by row on-hover bhvr
+			}*/
 		</script>
 	</body>
 </html>

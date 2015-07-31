@@ -29,48 +29,9 @@ time, mark, audio, video {
           box-sizing: border-box;
 }
 
-.col-one-half,
-.col-one-third,
-.col-two-thirds,
-.col-one-fourth,
-.col-three-fourths,
-.col-one-fifth,
-.col-one-tenth,
-.col-three-tenths,
-.col-two-fifths,
-.col-nine-tenths  {
+.column  {
 	display: inline-block;
-	vertical-align: top;
-	padding-left: 4px;
-	padding-right: 4px;
-}
-
-.col-one-half {
-	width:49.45%;
-}
-
-.col-one-third {
-	width: 33.33%;
-}
-
-.col-two-thirds {
-	width: 66.66%;
-}
-
-.col-one-fourth {
-	width:25%;
-}
-
-.col-three-fourths {
-	width:75%;
-}
-
-.col-one-tenth {
-	width:10%;
-}
-
-.col-nine-tenths {
-	width:90%;
+	vertical-align:top;
 }
 
 body {
@@ -78,9 +39,7 @@ body {
 }
 
 header {
-	padding:1.6em;
 	text-align: center;
-
 }
 
 header h1, section h1 {
@@ -89,7 +48,7 @@ header h1, section h1 {
 }
 
 header h1 {
-	margin:0.4em 0 0.6em 0;
+	margin:0.6em 0 0.6em 0;
 }
 
 section h1 {
@@ -124,7 +83,7 @@ a:visited {
 }
 
 hr {
-	margin:0 0 4em 0;
+	margin:1.4em 0 2.2em 0;
 	border: 0;
     border-bottom: 1px solid rgb(244,244,244);
 }
