@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Jean-Luc Potte: games user-experience, games user-testing</title>
+		<meta name="description" content="Portfolio of a games ux designer/user-testinger" />
+		<meta name="keywords" content="games ux designer, games UX designer, games user-testinger" />
+		<meta name="author" content="Jean-Luc Potte" />
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<style media="screen" type="text/css">
+			.five { width:5%; }
+			.sixteen { width:16.665%; }
+			.twenty { width:20%; }
+			.thirty { width:30%; }
+			.thirtythree { width:33%; }
+			.forty { width:40%; }
+			.sixty { width:60%; }
+			.sixtysix { width:66.66%; }
+			.eighty { width:79.8%; }
+			.ninety { width:90%; }
+			.hundred { width:100%; }
+
+			.prototype { 
+				background-color:rgb(232,232,232);
+				height:720px;
+			}
+
+			.column { position:relative;}
+
+			.active { border: green 1px solid; }
+
+			.splashScreen {
+				position: relative;
+				width:100%;
+				height:720px;
+				background-color: orange;
+				z-index: 5
+			}
+
+			.categories {
+				width:9%;
+				background-color: rgba(0,0,0,.5);
+				color:white;
+				min-height:720px;
+			}
+
+			.segments {
+				position: absolute;
+				bottom:0;
+				width:100%;
+				background-color:orange;
+			}
+
+			.cutPasteTool {
+				background-color:black;
+				color:white;
+				width:50%;
+				position:relative;
+				top:20px;
+				left:15%;
+				visibility: hidden;
+			}
+
+			h2 { 
+				font-size:2em;
+				margin-bottom:0.4em;
+			}
+
+			p { margin:2em 0 0.3em 0;}
+		</style>		
+	</head>
+	<body>
+		<header>
+			<h1>Jean-Luc Potte</h1>
+			<a href='index.html'>Projects</a>
+			<a href='https://dl.dropboxusercontent.com/u/6069526/JeanLucPotte_CV.pdf/'>Resume</a> 
+			<a href='https://twitter.com/jlpotte/'>Twitter</a> 
+		</header>
+		<hr>
+		<section class='column five'></section><!--
+	 --><section class='column ninety '>
+	 		<h2>The cut-paste tool</h2>
+	 		<p>Based on the results of playtest #03:</p>
+	 		<ul>
+	 			<li>Some players did not know that the cut-paste tool existed</li>
+	 			<li>Some players found the cut-paste tool difficult to use</li>
+	 		</ul>
+	 		<p>Goals of the prototype:</p>
+	 		<ol>
+	 			<li>Decrease time before players notice the tool</li>
+	 			<li>Communicate more clearly the difference between CUT and DELETE</li>
+	 			<li>Make it easier to understand the following events:
+	 				<ul>
+	 					<li>Track segment moves from the map to the cut-paste tool (=stored safely)</li>
+	 					<li>Track segment moves from cut-paste tool to the map (=paste)</li>
+	 					<li>Stored track segment is deleted (=skip)</li>
+	 				</ul>
+	 			</li>
+	 		</ul>
+	 	</section><!--
+	 --><section class='column five'></section><!--
+
+	 --><section class='column five'></section><!--
+	 --><section class='column sixty prototype'>
+	 		<div class='column splashScreen'>Press any button on your Xbox360/XONE gamepad to make them show up</div>
+	 		<div class='column categories'>Categories</div>
+	 		<div class='segments'>Segments</div>
+	 		<div class='column cutPasteTool'>Cut-paste tool</div>
+ 		</section><!--
+
+	 --><section class='column thirty'>Functional notes: </section><section class='column five'></section><!--
+	 
+	 --><section class='column hundred'></section><!--
+
+	 --><section class='column five'></section><!--
+	 --><section class='column sixty prototype'>Prototype 2: show advanced controls/ X O remains at bottom bar ("x: place segmentB12"</section><!--
+	 --><section class='column five'></section>
+		<script src="http://code.jquery.com/jquery.min.js"></script>
+		<script src="jquery.min.js"></script>
+		<script>
+			'use-strict';
+
+			if (typeof jQuery === 'undefined') {
+				document.write(unescape('jquery.min.js'))
+			};
+
+			var gamepads = navigator.getGamepads();
+			var gp;
+			var protoCutPaste = document.getElementsByTagName('section')[4];
+			var fps = 60;
+			var scheduled=false;
+
+			var children = document.getElementsByTagName('section')[4].children;
+
+			document.getElementsByTagName('section')[4].addEventListener('click', selectPrototype, true);
+			document.getElementsByTagName('section')[4].style.marginTop = '1.3em';
+			document.getElementsByTagName('section')[5].style.marginTop = '1.3em';
+			document.getElementsByTagName('section')[9].addEventListener('click', selectPrototype, false);
+
+			function draw() {
+			    setTimeout(function() {
+			        requestAnimationFrame(draw);
+			        //
+		        	for(var i= 0; i < gamepads.length; i++) {
+		        		if (gamepads[i] != undefined) {
+		        			gp = navigator.getGamepads()[i];
+	        		}
+					if(!scheduled) { 
+						scheduled=true;
+						setTimeout(function() {
+					        scheduled = false;
+					        pollForEvents();
+				      	}, 150);
+				}
+
+        	}
+
+			    }, 1000 / fps);
+			}
+
+			draw();
+
+			function pollForEvents() {
+		    			//if(gp.buttons[0].pressed && protoCutPaste.children.length < 1) {
+		    			if(gp.buttons[4].pressed) {
+		    			document.getElementsByClassName('cutPasteTool')[0].style.visibility = 'visible';
+		    			console.log('done');	
+	    				/*section = document.createElement('section');
+	    				section.classList.add('test');
+	    				section.textContent = 'test text';
+	    				protoCutPaste.appendChild(section);*/
+	    			}
+			}
+
+			function selectPrototype(e) {
+				for(var i=0; i<document.getElementsByClassName('prototype').length; i++) {
+					document.getElementsByClassName('prototype')[i].classList.remove('active');
+					e.target.classList.toggle('active');
+				}
+				
+			}
+
+			//layout debug
+			for(var i = 0; i < document.getElementsByTagName('section').length; i++) { 
+				//document.getElementsByTagName('section')[i].innerHTML += 'sectionID :' + i;
+				//document.getElementsByTagName('section')[i].style.outline = '1px dashed rgb(232,232,232)';
+			    var r = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+			    var g = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+			    var b = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+				//document.getElementsByTagName('section')[i].style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+			}
+    		/*
+			document.getElementsByClassName('col-three-fourths')[0].style.borderLeft = '1px solid rgb(244,244,244)';
+			document.getElementsByClassName('col-three-fourths')[0].style.paddingLeft = '1.2em';
+			document.getElementsByTagName('section')[1].style.marginBottom = '6em';
+
+			var section, name, clients, tasks,
+			fragment = document.createDocumentFragment();
+
+	        for (var i = 0; i < projects.length; ++i) {
+	        	if((i+1)%4 !== 0) {
+		            section = document.createElement('section');
+		            section.innerHTML = projects[i];
+		            
+		            if(i%4 ==  2) {
+		            	section.className = 'col-three-tenths';
+		            	section.style.color = 'rgb(117,117,117)';
+		            } else if (i%4 == 1) {
+		            	section.className = 'col-three-tenths';
+		            	section.style.color = 'rgb(117,117,117)';
+
+		            } else {
+		            	section.className = 'col-two-fifths';
+	            	}	            	
+		            fragment.appendChild(section);
+		        }
+	        }
+			document.getElementsByTagName('section')[3].appendChild(fragment);
+
+
+			for(var i = 4; i < 43; i++) {
+				document.getElementsByTagName('section')[i].addEventListener('mouseover', highlightRow, false);
+				document.getElementsByTagName('section')[i].addEventListener('mouseout', highlightRow, false);
+			}
+
+			function highlightRow() {
+				switch(event.type) {
+					case 'mouseover':
+						event.target.style.outline = '2px solid black';
+						if(event.target.textContent == 'GFACE') {
+							event.target.style.outline = '2px solid red';
+							event.target.style.textDecoration = 'underline';
+							event.target.innerHTML = ' <a href=\'http://www.google.com\'>GFACE go to project page</a>';
+						}
+						break;
+					case 'mouseout':
+						event.target.style.outline = 'none';
+					break;
+				}
+			}*/
+
+		</script>
+	</body>
+</html>
