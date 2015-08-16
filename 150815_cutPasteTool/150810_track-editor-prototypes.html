@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Jean-Luc Potte: games user-experience, games user-testing</title>
+		<meta name="description" content="Portfolio of a games ux designer/user-testinger" />
+		<meta name="keywords" content="games ux designer, games UX designer, games user-testinger" />
+		<meta name="author" content="Jean-Luc Potte" />
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<style media="screen" type="text/css">
+			.five { width:5%; }
+			.sixteen { width:16.665%; }
+			.twenty { width:20%; }
+			.twentythree { width:23%; }
+			.twentythreethree { width:33%; }
+			.forty { width:40%; }
+			.sixty { width:67.5%; }
+			.sixtyseven { width:66.66%; }
+			.eighty { width:79.8%; }
+			.ninety { width:90%; }
+			.hundred { width:100%; }
+
+			.prototype { 
+				background-color:rgb(232,232,232);
+				height:720px;
+			}
+
+			.prototype, .notes { margin:2em 0; }
+
+			.notes { padding-left:1em;}
+
+			.column { position:relative; }
+
+			.active { border: green 1px solid; }
+
+
+			.splashScreen {
+				position: absolute;
+				top:0;
+				left:0;
+				width:100%;
+				height:720px;
+				background-color: orange;
+				z-index: 5
+			}
+
+			.categories {
+				width:9%;
+				background-color: rgba(0,0,0,.5);
+				color:white;
+				min-height:720px;
+			}
+
+			.segments {
+				position: absolute;
+				bottom:0;
+				width:91%;
+				height:96px;
+				right:0;
+				background-color: rgba(0,0,0,.5);
+				color:white;
+			}
+
+			.cutPasteTool {
+				position:absolute;
+				height:120px;
+				top:4px;
+				background-color:black;
+				color:white;
+				width:50%;
+				left:30%;
+				visibility: visible;
+			}
+
+			.threeDView { 
+				position:absolute;
+				left:9%;
+				top:0;
+			}
+
+
+			.segmentthreeDView {
+				position:absolute;
+				top:45px;
+				left:45px;
+				visibility: hidden;
+
+			}
+
+			img { position:relative; }
+
+			h2 { 
+				font-size:2em;
+				margin-top:0.8em;
+				margin-bottom:0.2em;
+			}
+
+			h3 { 
+				font-size:1.4em;
+				margin-top:0.8em;
+				margin-bottom:0.2em;
+			}			
+
+			p { margin:0.2em;}
+
+			ul { padding-left:2em;}
+
+			ol { padding-left:2em;}
+
+			.notes ul li {
+				padding:0.4em;
+			}
+		</style>		
+	</head>
+	<body>
+		<header>
+			<h1>Jean-Luc Potte</h1>
+			<a href='index.html'>Projects</a>
+			<a href='https://dl.dropboxusercontent.com/u/6069526/JeanLucPotte_CV.pdf/'>Resume</a> 
+			<a href='https://twitter.com/jlpotte/'>Twitter</a> 
+		</header>
+		<hr>
+		<section class='column five'></section><!--
+	 --><section class='column ninety '>
+	 		<img src='urlab_logo.jpg'>
+	 		<h2>GUI suggestions: the cut-paste tool</h2>
+	 		<img src='cut-paste-tool.jpg'>
+	 		<h3>Context</h3>
+	 		<p>Based on the results of playtest #03:</p>
+	 		<ul>
+	 			<li>Some players did not know that the cut-paste tool existed</li>
+	 			<li>Some players found the cut-paste tool difficult to use</li>
+	 		</ul>
+	 		<h3>Goals of the prototype:</h3>
+	 		<ol>
+	 			<li>Decrease time before players notice the tool</li>
+	 			<li>Communicate more clearly the difference between CUT and DELETE</li>
+	 			<li>Make it easier to understand the following events:
+	 				<ul>
+	 					<li>Track segment moves from the map to the cut-paste tool (=stored safely)</li>
+	 					<li>Track segment moves from cut-paste tool to the map (=paste)</li>
+	 					<li>Stored track segment is deleted (=skip)</li>
+	 				</ul>
+	 			</li>
+	 		</ul>
+
+	 	</section><!--
+	 --><section class='column five'></section><!--
+
+	 --><section class='column five'></section><!--
+	 --><section class='column sixty prototype'>
+	 		<div class='categories'>Categories</div>
+	 		<div class='splashScreen'>Press any button on your Xbox360/XONE gamepad to make them show up</div>
+	 		<div class='segments'>Segments</div>
+	 		<div class='cutPasteTool'>Cut-paste tool</div>
+	 		<div class='threeDView'>3d view</div>
+ 		</section><!--
+
+	 --><section class='column twentythree notes'>
+	 		<h3>Prototype controls</h3>
+	 		<p>Press RB to add a track segment</p>
+	 		<p>Press LB to remove a track segment</p>
+	 		<h3>Suggestions for the cut-paste tool:</h3>
+	 		<ul>
+	 			<li>Change #1: stored elements are displayed horizontally, in order to communicate the visual order or storage</li>
+	 			<li>Change #2: </li>
+	 		</ul>
+	 	</section><section class='column five'></section><!--
+	 
+	 --><section class='column hundred'></section><!--
+
+     --><section class='column five'></section><!--
+	 --><section class='column ninety '>
+	 		<h2>Advanced controls display</h2>
+	 	</section><!--
+	 --><section class='column five'></section><!--
+
+	 --><section class='column five'></section><!--
+	 --><section class='column sixty prototype'>Prototype 2: show advanced controls/ X O remains at bottom bar ("x: place segmentB12"</section><!--
+	 --><section class='column twentythree notes'>Functional notes: </section><section class='column five'></section><!--
+	 --><section class='column five'></section>
+		<script src="http://code.jquery.com/jquery.min.js"></script>
+		<script src="jquery.min.js"></script>
+		<script>
+			'use-strict';
+
+			if (typeof jQuery === 'undefined') {
+				document.write(unescape('jquery.min.js'))
+			};
+
+			var gamepads = navigator.getGamepads();
+			var gp;
+			var protoCutPaste = document.getElementsByTagName('section')[4];
+			var fps = 60;
+			var scheduled=false;
+			var children = document.getElementsByTagName('section')[4].children;
+			//var placedSegments = document.getElementsByTagName('section')[4].getElementsByTagName('img');
+			var segmentsCount = 0;
+
+			setup();
+			draw();
+
+			function setup() {
+				document.getElementsByTagName('img')[0].style.maxWidth = '20%';
+				document.getElementsByTagName('img')[0].style.left = '40%';
+				document.getElementsByTagName('section')[4].addEventListener('click', selectPrototype, true);
+				document.getElementsByTagName('section')[9].addEventListener('click', selectPrototype, false);			
+				document.getElementsByClassName('splashScreen')[0].style.visibility = 'hidden';
+				document.getElementsByClassName('cutPasteTool')[0].style.visibility = 'hidden';
+				addSegment('straight',395,330);
+				addSegment('straight',490,330);
+				addSegment('turn',585,362);
+				addSegment('turn',650,450,180);				
+				addSegment('straight',745,487);
+			}
+
+			function draw() {
+			    setTimeout(function() {
+			        requestAnimationFrame(draw);
+		        	for(var i= 0; i < gamepads.length; i++) {
+		        		if (gamepads[i] != undefined) {
+		        			gp = navigator.getGamepads()[i];
+	        			}
+						if(!scheduled) { 
+							scheduled=true;
+							setTimeout(function() {
+						        scheduled = false;
+						        pollForEvents();
+					      	}, 150);
+						}
+        			}console.log(segmentsCount); 
+			    }, 1000 / fps);
+			}
+
+			function pollForEvents() {
+    			//if(gp.buttons[0].pressed && protoCutPaste.children.length < 1) {
+				var cutSegments = document.getElementsByTagName('section')		    				
+    			if(gp.buttons[0].pressed) document.getElementsByClassName('splashScreen')[0].style.visibility = 'hidden';
+    			else if(gp.buttons[4].pressed) {
+    				hideSegment();
+    			}
+    			else if(gp.buttons[5].pressed) {
+    				showSegment();
+    				/*switch(segmentsCount) {
+    					case 0:	
+    					addSegment('straight',395,330);
+    					break;
+    					case 1:
+    					addSegment('straight',490,330);
+    					break;
+    					case 2:
+    					addSegment('turn',585,362);
+    					break;
+    					case 3:
+    					addSegment('turn',650,450,180);
+    					break;
+    					case 4:
+    					if(document.getElementsByClassName('segmentthreeDView').length < 5) {
+    						addSegment('straight',745,487);
+    					}
+    					break;
+    				}*/
+    			}
+    			if(segmentsCount > 0) {
+    			document.getElementsByClassName('cutPasteTool')[0].style.visibility = 'visible';
+			}
+			}
+
+			function addSegment(_segment, _x, _y, _rotation) {
+				var div = document.createElement('div');
+				var img = document.createElement('img');
+				var x = _x;
+				var y = _y;
+				_segment == 'turn'? img.src = 'track-turn.png' : img.src = 'track-straight.png';
+				div.style.left = x + 'px';
+				div.style.top = y + 'px';
+				div.classList.add('segmentthreeDView');
+				div.style.transform = 'rotate('+_rotation+'deg)';
+				div.appendChild(img);
+				document.getElementsByClassName('prototype')[0].appendChild(div);
+			}
+
+			function showSegment() {
+				if(segmentsCount < 4) {
+					document.getElementsByClassName('segmentthreeDView')[segmentsCount].style.visibility = 'visible';
+				 	segmentsCount++;
+				}
+				/*placedSegments[segmentsCount].parentNode.removeChild(placedSegments[segmentsCount]);
+				console.log(segmentsCount);*/
+			}
+
+			function hideSegment() {
+				if(segmentsCount > -1) {
+					document.getElementsByClassName('segmentthreeDView')[segmentsCount].style.visibility = 'hidden';
+				 	segmentsCount--;
+				}
+				/*placedSegments[segmentsCount].parentNode.removeChild(placedSegments[segmentsCount]);
+				console.log(segmentsCount);*/
+			}
+
+			/*function hideSegment() {
+				var myNode = document.getElementsByClassName('segmentthreeDView')[segmentsCount];
+				while (myNode.firstChild) {
+					if(segmentsCount > 0) segmentsCount--;
+				    myNode.removeChild(myNode.firstChild);
+				}
+				
+				console.log(segmentsCount);
+							
+			}*/
+
+
+
+			function selectPrototype(e) {
+				for(var i=0; i<document.getElementsByClassName('prototype').length; i++) {
+					document.getElementsByClassName('prototype')[i].classList.remove('active');
+					e.target.classList.toggle('active');
+				}
+				
+			}
+
+			//layout debug
+			for(var i = 0; i < document.getElementsByTagName('section').length; i++) { 
+				//document.getElementsByTagName('section')[i].innerHTML += 'sectionID :' + i;
+				//document.getElementsByTagName('section')[i].style.outline = '1px dashed rgb(232,232,232)';
+			    var r = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+			    var g = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+			    var b = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+				//document.getElementsByTagName('section')[i].style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+			}
+		</script>
+	</body>
+</html>

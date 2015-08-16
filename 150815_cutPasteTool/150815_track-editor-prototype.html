@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Trackmania Turbo: UI suggestions - Track editor</title>
+		<meta name="author" content="Jean-Luc Potte" />
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<style media="screen" type="text/css">
+			.five { width:5%; }
+			.sixteen { width:16.665%; } 
+			.twenty { width:20%; }
+			.twentythree { width:23%; }
+			.twentythreethree { width:33%; }
+			.forty { width:40%; }
+			.sixty { width:67.5%; }
+			.sixtyseven { width:66.66%; }
+			.eighty { width:79.8%; }
+			.ninety { width:90%; }
+			.hundred { width:100%; }
+
+			.prototype { 
+				
+				height:720px;
+			}
+
+			.prototype, .notes { margin:2em 0; }
+
+			.notes { padding-left:1em;}
+
+			.column { position:relative; }
+
+
+			.splashScreen {
+				position: absolute;
+				top:0;
+				left:0;
+				width:100%;
+				height:720px;
+				background-color: rgba(0,0,0,.99);
+				z-index: 10;
+				font-size:1.8em;
+				color:white;
+			}
+
+			.splashScreen p { 
+				position:relative;
+				top: 50%;
+  				transform: translateY(-50%);
+				text-align: center;
+			}
+
+			.categories {
+				width:9%;
+				background-color: rgba(0,0,0,.8);
+				min-height:720px;
+			}
+
+			.segments {
+				position: absolute;
+				bottom:0;
+				width:91%;
+				height:128px;
+				right:0;
+				background-color: rgba(0,0,0,.8);
+				z-index: 10;
+			}
+
+			.cutPasteTool {
+				position:absolute;
+				height:140px;
+				top:4px;
+				background-color:black;
+				color:white;
+				width:50%;
+				left:30%;
+				visibility: hidden;
+				z-index: 10;
+			}
+
+			.threeDView { 
+				position:absolute;
+				left:9%;
+				top:0;
+			}
+
+
+			.segmentthreeDView {
+				position:absolute;
+				top:45px;
+				left:45px;
+				opacity:1;
+				transition:all 0.5s ease-in-out;
+				display:inline-block;
+
+			}
+
+			.segmentthreeDView.active {
+				transform:scale(0.1);
+				opacity:0;
+			}
+
+			.twoDIcon {
+				position:absolute;
+				left:200px;
+				top:400px;
+				width:80px;
+				height:80px;
+				background-color:orange;
+				opacity: 1;
+				transition:all 0.45s ease-in-out;
+			}
+
+			.twoDIcon.active {
+				transform:translateY(-100px);
+				opacity:0;
+			}
+
+			#myCanvas {
+				position:absolute;
+				left:900px;
+				z-index: 15;
+			}
+
+			img { 
+				position:relative; 
+				z-index: 1;
+			}
+
+			.prototype img { transform: scale(0.22, 0.22); }
+
+			h2 { 
+				font-size:2em;
+				margin-top:0.8em;
+				margin-bottom:0.2em;
+			}
+
+			h3 { 
+				font-size:1.4em;
+				margin-top:0.8em;
+				margin-bottom:0.2em;
+			}			
+
+			p { margin:0.2em;}
+
+			ul { padding-left:2em;}
+
+			ol { padding-left:2em;}
+
+			.notes ul li {
+				padding:0.4em;
+			}
+		</style>		
+	</head>
+	<body>
+		<section class='column five'></section><!--
+	 --><section class='column ninety '>
+	 		<img src='urlab_logo.jpg'>
+	 		<h2>GUI suggestions: the cut-paste tool</h2>
+	 		<img src='cut-paste-tool.jpg'>
+	 		<h3>Context</h3>
+	 		<p>Based on the results of playtest #03:</p>
+	 		<ul>
+	 			<li>Some players did not know that the cut-paste tool existed</li>
+	 			<li>Some players found the cut-paste tool difficult to use</li>
+	 		</ul>
+	 		<h3>Goals of the prototype:</h3>
+	 		<ol>
+	 			<li>Decrease time before players notice the tool</li>
+	 			<li>Communicate more clearly the difference between CUT and DELETE</li>
+	 			<li>Make it easier to understand the following events:
+	 				<ul>
+	 					<li>Track segment moves from the map to the cut-paste tool (=stored safely)</li>
+	 					<li>Track segment moves from cut-paste tool to the map (=paste)</li>
+	 					<li>Stored track segment is deleted (=skip)</li>
+	 				</ul>
+	 			</li>
+	 		</ol>
+	 		<h3>Suggestions for the cut-paste tool:</h3><ul><li>Change #1: stored elements are displayed horizontally, in order to communicate the visual order or storage</li><li>Change #2: </li></ul>
+
+	 	</section><!--
+	 --><section class='column five'></section><!--
+
+	 --><section class='column five'></section><!--
+	 --><section class='column sixty prototype'>
+
+ 		    <canvas id="myCanvas" width="578" height="200"></canvas>
+
+	 		<div class='categories'>Categories</div>
+
+	 		<div class='splashScreen'>
+	 			<p>Cut-paste tool prototype</p>
+	 			<p>Press the (A) button on your Xbox360/XONE gamepad to start</p>
+	 		</div>
+
+	 		<div class='segments'>Segments</div>
+
+	 		<div class='cutPasteTool'>Cut-paste tool</div>
+
+	 		<div class='threeDView'>3d view</div>
+
+	 		<div class='twoDIcon'>THIS IS AN ICON</div>
+ 		</section><!--
+
+	 --><section class='column twentythree notes'>
+
+	 	</section><section class='column five'></section><!--
+	 
+	 --><section class='column hundred'></section><!--
+
+     --><section class='column five'></section><!--
+	 --><section class='column ninety '>
+	 	</section><!--
+	 --><section class='column five'></section>
+		<script src="http://code.jquery.com/jquery.min.js"></script>
+		<script src="jquery.min.js"></script>
+		<script>
+			'use-strict';
+			//instead of the segments in the 3d view fading, ICONS of those segments should appear, then go up and fade
+			//the content of the cut-paste tool is an array, inside each is 0/1/2. Based on the value: nothing/straight/turn
+			//the code above alo
+
+			if (typeof jQuery === 'undefined') {
+				document.write(unescape('jquery.min.js'))
+			};
+
+			var gamepads = navigator.getGamepads();
+			var gp;
+			var fps = 60;
+			var scheduled=false;
+			var appState = 1;
+			var placedSegments = 5;
+			var protoCutPaste = document.getElementsByTagName('section')[4];
+			var children = document.getElementsByTagName('section')[4].children;
+			var canvas = document.getElementById('myCanvas');
+			var context = canvas.getContext('2d');
+
+			setup();
+			draw();
+
+			function setup() {
+				document.getElementsByTagName('img')[0].style.maxWidth = '20%';
+				document.getElementsByTagName('img')[0].style.left = '40%';
+				document.getElementsByTagName('section')[4].addEventListener('click', selectPrototype, true);
+				document.getElementsByTagName('section')[9].addEventListener('click', selectPrototype, false);			
+				
+				addSegment('straight',-284,-600,90);
+				addSegment('turn',46,-515,90);
+				addSegment('turn',282,-268,-90);
+				addSegment('turn',568,-312,180);
+				addSegment('turn',524,-512,90);
+
+				
+
+				context.beginPath();
+				context.strokeStyle = '#009900';
+				context.lineWidth = '3';
+				context.moveTo(100, 150);
+				context.lineTo(400, 70);
+				context.stroke();
+			}
+
+			function draw() {
+			    setTimeout(function() {
+			        requestAnimationFrame(draw);
+		        	for(var i= 0; i < gamepads.length; i++) {
+		        		if (gamepads[i] != undefined) {
+		        			gp = navigator.getGamepads()[i];
+	        			}
+						if(!scheduled) { 
+							scheduled=true;
+							setTimeout(function() {
+						        scheduled = false;
+						        pollForEvents();
+					      	}, 150);
+						}
+        			}
+        			switch(appState) {
+						case 0:  
+						break;
+						case 1:
+						document.getElementsByClassName('splashScreen')[0].style.visibility = 'hidden';
+						document.getElementsByClassName('notes')[0].innerHTML = '<h3>Step 1: </h3><p>Press RB to add a track segment</p><p>Press LB to remove a track segment</p>';
+						break;
+						case 2:
+						document.getElementsByTagName('canvas')[0].style.visibility = 'hidden';
+					}
+			    }, 1000 / fps);
+			}
+
+			function pollForEvents() {    				
+    			for(var i=0; i < gp.buttons.length; i++) {
+    				if(gp.buttons[i].pressed) console.log('appState is now: '+ appState);
+    			}
+
+    			if(gp.buttons[0].pressed && appState == 0) {
+    				appState = 1;
+    			} else if(gp.buttons[1].pressed) {
+    				document.getElementsByClassName('twoDIcon')[0].classList.add('active');
+    			} else if(gp.buttons[3].pressed) {
+    				appState = 2;
+    				console.log('done');
+    			} else if(gp.buttons[4].pressed) {
+    				//document.getElementsByClassName('segmentthreeDView')[placedSegments-1].classList.add('active');
+    				hideSegment();
+    				console.log(placedSegments);
+    				if(appState == 1) appState = 2;
+    			}
+    			else if(gp.buttons[5].pressed) {
+    				//document.getElementsByClassName('segmentthreeDView')[placedSegments].classList.remove('active');
+    				showSegment();
+    				console.log(placedSegments);
+    			}
+    			placedSegments < 5 ? document.getElementsByClassName('cutPasteTool')[0].style.visibility = 'visible': document.getElementsByClassName('cutPasteTool')[0].style.visibility = 'hidden';
+			}
+
+			function addSegment(_segment, _x, _y, _rotation) {
+				var div = document.createElement('div');
+				var img = document.createElement('img');
+				var x = _x;
+				var y = _y;
+				_segment == 'turn'? img.src = 'track-turn.jpg' : img.src = 'track-straight.jpg';
+				div.style.left = x + 'px';
+				div.style.top = y + 'px';
+				div.classList.add('segmentthreeDView');
+				div.style.transform = 'rotate('+_rotation+'deg)';
+				div.appendChild(img);
+				document.getElementsByClassName('prototype')[0].appendChild(div);
+			}
+
+			function showSegment() {
+				if(placedSegments < 5) {
+				 	placedSegments++;
+					document.getElementsByClassName('segmentthreeDView')[placedSegments-1].classList.remove('active');
+				}
+				console.log('placedSegments = ' + placedSegments);
+			}
+
+			function hideSegment() {
+				if(placedSegments > 0) {
+				 	placedSegments--;
+					document.getElementsByClassName('segmentthreeDView')[placedSegments].classList.add('active');
+				}
+				console.log('placedSegments = ' + placedSegments);
+			}
+
+			function selectPrototype(e) {
+				for(var i=0; i<document.getElementsByClassName('prototype').length; i++) {
+					document.getElementsByClassName('prototype')[i].classList.remove('active');
+					e.target.classList.toggle('active');
+				}
+				
+			}
+
+			//layout debug
+			for(var i = 0; i < document.getElementsByTagName('section').length; i++) { 
+				//document.getElementsByTagName('section')[i].innerHTML += 'sectionID :' + i;
+				//document.getElementsByTagName('section')[i].style.outline = '1px dashed rgb(232,232,232)';
+			    var r = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+			    var g = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+			    var b = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+				//document.getElementsByTagName('section')[i].style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+			}
+		</script>
+	</body>
+</html>

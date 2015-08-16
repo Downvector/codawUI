@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Trackmania Turbo: UI suggestions - Track editor</title>
+		<meta name="author" content="Jean-Luc Potte" />
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<style media="screen" type="text/css">
+			.five { width:5%; }
+			.sixteen { width:16.665%; } 
+			.twenty { width:20%; }
+			.twentythree { width:23%; }
+			.thirtythree { width:33%; }
+			.forty { width:40%; }
+			.sixty { width:67.5%; }
+			.sixtyseven { width:66.66%; }
+			.eighty { width:79.8%; }
+			.ninety { width:90%; }
+			.hundred { width:100%; }
+			.active { outline:2px solid orange;}
+		</style>		
+	</head>
+	<body>
+		<section class='column five'></section><!--
+	 --><section class='column ninety '>
+	 		<section class='column thirtythree active'>Change weapon</section><!--
+	 	 --><section class='column thirtythree'>Scorestreak</section><!--
+ 	 	 --><section class='column thirtythree'>Options</section><!--
+	 	 --><section class='column thirtythree'>weapon1</section><!--
+ 	 	 --><section class='column thirtythree'>weapon2</section><!--
+	 	 --><section class='column thirtythree'>weapon3</section><!--
+ 	 	 --><section class='column thirtythree'>weapon4</section><!--
+	 	 --><section class='column thirtythree'>weapon5</section><!--
+ 	 	 --><section class='column thirtythree'>weapon6</section><!--
+	 	 --><section class='column thirtythree'>weapon7</section><!--
+ 	 	 --><section class='column thirtythree'>weapon8</section><!--
+	 --></section><!--
+	 --><section class='column five'></section>
+		<script>
+			'use-strict';
+
+			var gamepads = navigator.getGamepads();
+			var gp;
+			var fps = 60;
+			var scheduled=false;
+			var appState = 'start';
+
+			setup();
+			draw();
+
+			function setup() {
+				document.getElementsByTagName('section')[2].style.cssText = 'color:orange; background-color:black';
+				console.dir(document.getElementsByTagName('section')[1].children[1]);
+			}
+
+			function draw() {
+			    setTimeout(function() {
+			        requestAnimationFrame(draw);
+		        	for(var i= 0; i < gamepads.length; i++) {
+		        		if (gamepads[i] != undefined) {
+		        			gp = navigator.getGamepads()[i];
+	        			}
+						if(!scheduled) { 
+							scheduled=true;
+							setTimeout(function() {
+						        scheduled = false;
+						        padManager();
+					      	}, 150);
+						}
+        			}
+        			switch(appState) {
+						case 'start':  
+						break;
+						case 'weapons':
+
+					}
+			    }, 1000 / fps);
+			}
+
+			function padManager() {    				
+    			if(gp.buttons[0].pressed && appState == 'start') {
+    				appState = 1;
+    			}
+    			for(var i=0; i < gp.buttons.length; i++) {
+    				if(gp.buttons[i].pressed) console.log('appState is now: '+ appState);
+    			}
+			}
+
+			//layout debug
+			for(var i = 0; i < document.getElementsByTagName('section').length; i++) { 
+				//document.getElementsByTagName('section')[i].innerHTML += 'sectionID :' + i;
+				//document.getElementsByTagName('section')[i].style.outline = '1px dashed rgb(232,232,232)';
+			    var r = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+			    var g = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+			    var b = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+				//document.getElementsByTagName('section')[i].style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+			}
+		</script>
+	</body>
+</html>
