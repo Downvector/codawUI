@@ -196,8 +196,9 @@
 			}
 
 			.cutPasteTool > .twoDIcon {
-				background-color:pink;
+				background-color:black;
 				opacity:0;
+				font-size:3em;
 			}
 
 			.twoDIcon.straight { background-image:url('2D-straight.png') }
@@ -329,13 +330,13 @@
 			var children = document.getElementsByTagName('section')[4].children;
 			var canvas = document.getElementById('myCanvas');
 			var context = canvas.getContext('2d');
-			var appState = 1;
+			var appState = 0;
 			var placedSegments = 5;
 			var cutPasteToolCursor = 4;
 
 			var textDescription = [
-				'<h3>Functional notes</h3><p>you need an xbox controller (X360 or XOne) plugged in to control the prototype</p>',
-				'<h3>Functional notes</h3><p>Let\'s assume the player has already placed five segments. The last segment placed by the players was this one:</p><hr><p>Note that the prototype only answers to the L1 and R1 buttons:</p><p><b>Press LB to remove a track segment</b></p><p>Press RB to add a track segment</p><p>Press RT to skip a removed segment</p>',
+				'<h3>Functional notes</h3><p>you need an xbox controller (X360 or XOne) plugged + google chrome in order to control the prototype</p>',
+				'<h3>Functional notes</h3><p>Let\'s assume the player has already placed five segments. The last segment placed by the players was this one:</p><hr><p>Note that the prototype only answers to the L1 and R1 buttons:</p><p><b>Press LB to remove a track segment</b></p><p>Press RB to add a track segment</p>',
 				'<h3>Functional notes</h3><p>As soon as a segment becomes cut, three animations fire at once:</p><p>- Tool appears via top of the screen</p><p>- segment becomes a 2d icon</p><p>- The icon move up and disappears from the 3d screen, then appears inside the tool</p>'
 			];
 
@@ -387,7 +388,7 @@
 							setTimeout(function() {
 						        scheduled = false;
 						        padManager();
-					      	}, 290);
+					      	}, 240);
 						}
         			}
         			switch(appState) {
@@ -407,11 +408,7 @@
 			    }, 1000 / fps);
 			}
 
-			function padManager() {    				
-    			/*for(var i=0; i < gp.buttons.length; i++) {
-    				if(gp.buttons[i].pressed) console.log('appState is now: '+ appState);
-    			}*/
-
+			function padManager() {  
     			if(gp.buttons[0].pressed && appState == 0) {
     				appState = 1;
 
@@ -460,6 +457,8 @@
 				 	placedSegments--;
 					document.getElementsByClassName('segmentthreeDView')[placedSegments].classList.add('active');
 				}
+				if(placedSegments == 1) document.getElementsByClassName('twoDIcon')[5].style.cssText = 'opacity:1';
+				setTimeout(function() { document.getElementsByClassName('twoDIcon')[5].style.cssText = 'left:20px; top:135px'; }, 250);
 				console.log('placedSegments = ' + placedSegments);
 			}
 
