@@ -154,16 +154,16 @@
 
 			.cutPasteTool {
 				position:absolute;
-				top:4px;
-				left:30%;
-				width:50%;
+				top:12px;
+				left:35%;
+				width:40%;
 				height:140px;
 				z-index: 10;
 				visibility: hidden;
-				background-color:black;
+				background-color:rgba(0,0,0,0.8);
 				color:white;
 				opacity:0;
-				transition:all 0.16s ease-in-out;
+				transition:all 0.06s ease-in-out;
 			}
 
 			.cutPasteTool.active {
@@ -187,31 +187,75 @@
 
 			.twoDIcon {
 				position:absolute;
-				left:0;
-				top:0;
 				width:80px;
 				height:80px;
-				
-				opacity: 1;
-				transition:all 0.45s ease-in-out;
-				z-index:11;
+				z-index:3;
+				background-size: 164px 164px;
+				background-size: contain;
+				opacity: 0;
 			}
 
 			.cutPasteTool > .twoDIcon {
 				background-color:pink;
 			}
 
-			.twoDIcon {
-			}
-
 			.twoDIcon.straight { background-image:url('2D-straight.png') }
 			.twoDIcon.turn { background-image:url('2D-turn.png') }
 
 			.twoDIcon.up {
-				transform:translateY(-100px);
-				opacity:0;
+				animation: fadeOutUp 0.9s;
 			}
 
+			.twoDIcon.down {
+				animation: fadeInDown 0.9s;
+			}
+
+			.twoDIcon.saved {
+				transform:translateY(-100px);
+				opacity:1;
+				transition:all 0.45s ease-in-out;
+			}
+			.twoDIcon.skipped {
+				animation: zoomOut 0.9s;
+			}
+
+			.visible { visibility: visible }
+
+			@keyframes fadeOutUp {
+			  from {
+			    opacity: 1;
+			  }
+
+			  100% {
+			    opacity: 0;
+			    transform: translateY(-100px);
+			  }
+			}
+
+			.fadeOutUp {
+			  animation-name: fadeOutUp;
+			}
+
+
+			@keyframes fadeInDown {
+			  from {
+			    opacity: 0;
+			    transform: translate3d(0, -100%, 0);
+			  }
+
+			  100% {
+			    opacity: 1;
+			    transform: none;
+			  }
+			}
+
+			.fadeInDown {
+			  animation-name: fadeInDown;
+			}
+
+			.zoomOut {
+			  animation-name: zoomOut;
+			}
 
 		</style>		
 	</head>
@@ -257,12 +301,18 @@
 
 	 		<div class='segments'>Segments</div>
 
+	 		<div class='twoDIcon straight'></div>
+	 		<div class='twoDIcon turn'></div>
+	 		<div class='twoDIcon turn'></div>
+	 		<div class='twoDIcon turn'></div>
+	 		<div class='twoDIcon turn'></div>
+
 	 		<div class='cutPasteTool'>
 	 			Storage
 	 			<div class='twoDIcon'>[...]</div>
-	 			<div class='twoDIcon'>Slot1/3</div>
-	 			<div class='twoDIcon'>Slot2/3</div>
-	 			<div class='twoDIcon'>Slot3/3</div>
+	 			<div class='twoDIcon turn'></div>
+	 			<div class='twoDIcon turn'></div>
+	 			<div class='twoDIcon turn'></div>
 	 		</div>
 
  		</section><!--
@@ -294,6 +344,13 @@
 			var context = canvas.getContext('2d');
 			var appState = 1;
 			var placedSegments = 5;
+			var cutPasteToolCursor = 3;
+
+			var textDescription = [
+				'<h3>Functional notes</h3><p>you need an xbox controller (X360 or XOne) plugged in to control the prototype</p>',
+				'<h3>Functional notes</h3><p>Let\'s assume the player has already placed five segments. The last segment placed by the players was this one:</p><hr><p>Note that the prototype only answers to the L1 and R1 buttons:</p><p><b>Press LB to remove a track segment</b></p><p>Press RB to add a track segment</p><p>Press RT to skip a removed segment</p>',
+				'<h3>Functional notes</h3><p>As soon as a segment becomes cut, three animations fire at once:</p><p>- Tool appears via top of the screen</p><p>- segment becomes a 2d icon</p><p>- The icon move up and disappears from the 3d screen, then appears inside the tool</p>'
+			];
 
 			setup();
 			draw();
@@ -309,6 +366,17 @@
 				createSegment('turn',170,-168,-90);
 				createSegment('turn',456,-212,180);
 				createSegment('turn',412,-412,90);
+
+				document.getElementsByClassName('twoDIcon')[0].style.cssText = 'left:130px; top:170px';
+				document.getElementsByClassName('twoDIcon')[1].style.cssText = 'left:480px; top:260px';
+				document.getElementsByClassName('twoDIcon')[2].style.cssText = 'left:660px; top:540px';
+				document.getElementsByClassName('twoDIcon')[3].style.cssText = 'left:960px; top:540px';
+				document.getElementsByClassName('twoDIcon')[4].style.cssText = 'left:960px; top:260px';
+
+				document.getElementsByClassName('twoDIcon')[5].style.cssText = 'left:20px; top:35px';
+				document.getElementsByClassName('twoDIcon')[6].style.cssText = 'left:140px; top:135px';
+				document.getElementsByClassName('twoDIcon')[7].style.cssText = 'left:260px; top:135px';
+				document.getElementsByClassName('twoDIcon')[8].style.cssText = 'left:380px; top:135px';
 
 				context.beginPath();
 				context.strokeStyle = '#009900';
@@ -337,43 +405,88 @@
         			}
         			switch(appState) {
 						case 0: //prototype is here. Press A to activate your gamepad. You need this browser + an xbox controller 
-							notes.innerHTML = '<h3>Functional notes</h3><p>you need an xbox controller (X360 or XOne) plugged in to control the prototype</p>';
+							notes.innerHTML = textDescription[0];
 						break;
 						case 1: //default state: in this prototype, only L1 and R1 are usable
 							document.getElementsByClassName('splashScreen')[0].style.visibility = 'hidden';
 							document.getElementsByTagName('canvas')[0].style.visibility = 'visible';
-							notes.innerHTML = '<h3>Functional notes</h3><p>Let\'s assume the player has already placed five segments. The last segment placed by the players was this one:</p><hr><p>Note that the prototype only answers to the L1 and R1 buttons:</p><p><b>Press LB to remove a track segment</b></p><p>Press RB to add a track segment</p><p>Press RT to skip a removed segment</p>';
+							notes.innerHTML = textDescription[1];
 						break;
 						case 2: //as soon as a segment is removed, storage appears
 							document.getElementsByTagName('canvas')[0].style.visibility = '';
-							notes.innerHTML = '<h3>Functional notes</h3><p>As soon as a segment becomes cut, three animations fire at once:</p><p>- Tool appears via top of the screen</p><p>- segment becomes a 2d icon</p><p>- The icon move up and disappears from the 3d screen, then appears inside the tool</p>';
+							notes.innerHTML = textDescription[2];
 						break;
 					}
 			    }, 1000 / fps);
 			}
 
 			function padManager() {    				
-    			for(var i=0; i < gp.buttons.length; i++) {
+    			/*for(var i=0; i < gp.buttons.length; i++) {
     				if(gp.buttons[i].pressed) console.log('appState is now: '+ appState);
-    			}
+    			}*/
 
     			if(gp.buttons[0].pressed && appState == 0) {
     				appState = 1;
 
     			} else if(gp.buttons[1].pressed && appState !== 0) {
-    				document.getElementsByClassName('twoDIcon')[0].classList.add('up');
+    				//document.getElementsByClassName('twoDIcon')[0].classList.add('up');
 
     			} else if(gp.buttons[4].pressed && appState !== 0) {
     				hideSegment();
     				document.getElementsByClassName('cutPasteTool')[0].classList.add('active');
-    				console.log(placedSegments);
+    				//cutAnimations();
     				if(appState == 1) appState = 2;
 
     			} else if(gp.buttons[5].pressed && appState !== 0) {
     				showSegment();
-    				document.getElementsByClassName('cutPasteTool')[0].classList.remove('active');
-    				console.log(placedSegments);
+    				if(placedSegments == 5) {
+    					setTimeout(function() { document.getElementsByClassName('cutPasteTool')[0].classList.remove('active'); }, 215);
+    				}
+    				//pasteAnimations();
     			}
+			}
+
+
+			function showSegment() {
+				if(placedSegments < 5) {
+				 	placedSegments++;
+					document.getElementsByClassName('segmentthreeDView')[placedSegments-1].classList.remove('active');
+					document.getElementsByClassName('twoDIcon')[placedSegments].style.cssText = 'opacity:1';
+					document.getElementsByClassName('twoDIcon')[placedSegments].classList.remove('up');
+					//document.getElementsByClassName('twoDIcon')[placedSegments].classList.add('down');
+				}
+				console.log('placedSegments = ' + placedSegments);
+			}
+
+			function hideSegment() {
+				if(placedSegments > 0) {
+				 	placedSegments--;
+					document.getElementsByClassName('segmentthreeDView')[placedSegments].classList.add('active');
+					resetIconPositions();
+					document.getElementsByClassName('twoDIcon')[placedSegments].classList.add('up');
+					document.getElementsByClassName('twoDIcon')[placedSegments+3].classList.add('up');
+					setTimeout(function() { document.getElementsByClassName('twoDIcon')[placedSegments].style.cssText = 'opacity:0'; }, 215);
+					setTimeout(function() { document.getElementsByClassName('twoDIcon')[placedSegments+cutPasteToolCursor].style.cssText = 'opacity:1'; }, 215);
+					if(cutPasteToolCursor > 0) cutPasteToolCursor--;
+				}
+				console.log('placedSegments = ' + placedSegments);
+			}
+
+			function skipSegment() {
+				//
+			}
+
+			function resetIconPositions() {
+				document.getElementsByClassName('twoDIcon')[0].style.cssText = 'left:130px; top:170px';
+				document.getElementsByClassName('twoDIcon')[1].style.cssText = 'left:480px; top:260px';
+				document.getElementsByClassName('twoDIcon')[2].style.cssText = 'left:660px; top:540px';
+				document.getElementsByClassName('twoDIcon')[3].style.cssText = 'left:960px; top:540px';
+				document.getElementsByClassName('twoDIcon')[4].style.cssText = 'left:960px; top:260px';
+
+				document.getElementsByClassName('twoDIcon')[5].style.cssText = 'left:20px; top:35px';
+				document.getElementsByClassName('twoDIcon')[6].style.cssText = 'left:140px; top:135px';
+				document.getElementsByClassName('twoDIcon')[7].style.cssText = 'left:260px; top:135px';
+				document.getElementsByClassName('twoDIcon')[8].style.cssText = 'left:380px; top:135px';
 			}
 
 			function createSegment(_segment, _x, _y, _rotation) {
@@ -390,29 +503,37 @@
 				document.getElementsByClassName('prototype')[0].appendChild(div);
 			}
 
-			function showSegment() {
-				if(placedSegments < 5) {
-				 	placedSegments++;
-					document.getElementsByClassName('segmentthreeDView')[placedSegments-1].classList.remove('active');
+			/*function cutAnimations() {
+				switch(placedSegments) {
+					case 4: 
+						document.getElementsByClassName('twoDIcon')[4].classList.remove('up');
+						document.getElementsByClassName('twoDIcon')[4].style.opacity = '1';
+						document.getElementsByClassName('twoDIcon')[4].classList.add('up');
+						setTimeout(function() { document.getElementsByClassName('twoDIcon')[4].style.opacity = '0'; }, 250);
+						document.getElementsByClassName('twoDIcon')[5+cutPasteToolCursor].classList.add('saved');
+					break;
+					case 3: 
+						document.getElementsByClassName('twoDIcon')[3].classList.remove('up');
+						document.getElementsByClassName('twoDIcon')[3].style.opacity = '1';
+						document.getElementsByClassName('twoDIcon')[3].classList.add('up');
+						setTimeout(function() { document.getElementsByClassName('twoDIcon')[4].style.opacity = '0'; }, 250);
+						document.getElementsByClassName('twoDIcon')[4+cutPasteToolCursor].classList.add('saved');
+					break;
 				}
-				console.log('placedSegments = ' + placedSegments);
 			}
 
-			function hideSegment() {
-				if(placedSegments > 0) {
-				 	placedSegments--;
-					document.getElementsByClassName('segmentthreeDView')[placedSegments].classList.add('active');
+			function pasteAnimations() {
+			switch(placedSegments) {
+					case 5: 
+						document.getElementsByClassName('twoDIcon')[4].style.opacity = '1';
+						document.getElementsByClassName('twoDIcon')[4].classList.add('up');
+						//setTimeout(function() { document.getElementsByClassName('twoDIcon')[4].style.opacity = '0'; }, 250);
+						document.getElementsByClassName('twoDIcon')[4].classList.add('down');
+						setTimeout(function() { document.getElementsByClassName('twoDIcon')[4].style.opacity = '0'; }, 250);
+						document.getElementsByClassName('twoDIcon')[5+cutPasteToolCursor].classList.remove('saved');
+					break;
 				}
-				console.log('placedSegments = ' + placedSegments);
-			}
-
-			function skipSegment() {
-
-			}
-
-			function showIcon() {
-
-			}
+			}*/
 
 			//layout debug
 			for(var i = 0; i < document.getElementsByTagName('section').length; i++) { 

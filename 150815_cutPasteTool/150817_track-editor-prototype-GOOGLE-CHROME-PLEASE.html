@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Trackmania Turbo: UI suggestions - Track editor</title>
+		<meta name="author" content="Jean-Luc Potte" />
+		<style media="screen" type="text/css">
+			html, body, div, span, applet, object, iframe,
+			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+			a, abbr, acronym, address, big, cite, code,
+			del, dfn, em, img, ins, kbd, q, s, samp,
+			small, strike, strong, sub, sup, tt, var,
+			b, u, i, center,
+			dl, dt, dd, ol, ul, li,
+			fieldset, form, label, legend,
+			table, caption, tbody, tfoot, thead, tr, th, td,
+			article, aside, canvas, details, embed,
+			figure, figcaption, footer, header, hgroup,
+			menu, nav, output, ruby, section, summary,
+			time, mark, audio, video {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				font-size: 100%;
+				font: inherit;
+				vertical-align: baseline;
+			}
+
+			*,
+			*:before,
+			*:after {
+			  -webkit-box-sizing: border-box;
+			     -moz-box-sizing: border-box;
+			          box-sizing: border-box;
+			}
+
+			.column  {
+				display: inline-block;
+				vertical-align:top;
+			}
+
+			body {
+				font-family: 'Open Sans', sans-serif;
+			}
+
+			.five { width:5%; }
+			.sixteen { width:16.665%; } 
+			.twenty { width:20%; }
+			.twentythree { width:23%; }
+			.twentythreethree { width:33%; }
+			.forty { width:40%; }
+			.sixty { width:67.5%; }
+			.sixtyseven { width:66.66%; }
+			.eighty { width:79.8%; }
+			.ninety { width:90%; }
+			.hundred { width:100%; }
+
+			.prototype { 
+				height:720px;
+			}
+
+			.prototype, .notes { margin:2em 0; }
+
+			.notes { padding-left:1em;}
+
+			.column { position:relative; }
+
+
+			.splashScreen {
+				position: absolute;
+				top:0;
+				left:0;
+				width:100%;
+				height:720px;
+				background-color: rgba(0,0,0,.99);
+				z-index: 42;
+				font-size:1.8em;
+				color:white;
+			}
+
+			.splashScreen p { 
+				position:relative;
+				top: 50%;
+  				transform: translateY(-50%);
+				text-align: center;
+			}
+
+			.categories {
+				position:absolute;
+				width:11%;
+				background-color: rgba(0,0,0,.8);
+				min-height:720px;
+				z-index: 10;
+			}
+
+			.segments {
+				position: absolute;
+				bottom:0;
+				width:89%;
+				height:128px;
+				right:0;
+				background-color: rgba(0,0,0,.8);
+				z-index: 10;
+			}
+
+			img { 
+				position:relative; 
+				z-index: 1;
+			}
+
+			.prototype img { transform: scale(0.22, 0.22); }
+
+			h1 { 
+				font-size:2em;
+				margin-top:0.8em;
+				margin-bottom:0.2em;
+				color:black;
+			}
+
+			h2 { 
+				font-size:2em;
+				margin-top:0.8em;
+				margin-bottom:0.2em;
+				color:rgb(112,112,112);
+			}			
+
+			h3 { 
+				font-size:1.4em;
+				margin-top:0.8em;
+				margin-bottom:0.2em;
+			}			
+
+			p { margin:0.2em;}
+
+			ul { padding-left:2em;}
+
+			ol { padding-left:2em;}
+
+			b { font-weight:bold;}
+
+			.notes ul li {
+				padding:0.4em;
+			}
+
+			#myCanvas {
+				position:absolute;
+				top:0;
+				left:0;
+				visibility:hidden;
+				z-index:15;
+			}
+
+			.cutPasteTool {
+				position:absolute;
+				top:12px;
+				left:35%;
+				width:40%;
+				height:140px;
+				z-index: 10;
+				visibility: hidden;
+				background-color:rgba(0,0,0,0.8);
+				color:white;
+				opacity:0;
+				transition:all 0.16s ease-in-out;
+			}
+
+			.cutPasteTool.active {
+				opacity: 1;
+				visibility: visible;
+			}
+
+			.segmentthreeDView {
+				position:absolute;
+				top:45px;
+				left:45px;
+				opacity:1;
+				transition:all 0.01s ease-in-out;
+				display:inline-block;
+
+			}
+
+			.segmentthreeDView.active {
+				opacity:0;
+			}
+
+			.twoDIcon {
+				position:absolute;
+				width:80px;
+				height:80px;
+				opacity: 0;
+				z-index:3;
+				background-size: 164px 164px;
+				background-size: contain;
+			}
+
+			.cutPasteTool > .twoDIcon {
+				background-color:pink;
+				opacity:0;
+			}
+
+			.twoDIcon.straight { background-image:url('2D-straight.png') }
+			.twoDIcon.turn { background-image:url('2D-turn.png') }
+
+			.twoDIcon.up {
+				transform:translateY(-100px);
+				opacity:0;
+				transition:all 0.45s ease-in-out;
+			}
+
+			.twoDIcon.down {
+				transform:translateY(0px);
+				transition:all 0.45s ease-in-out;
+			}
+
+			.twoDIcon.saved {
+				transform:translateY(-100px);
+				opacity:1;
+				transition:all 0.45s ease-in-out;
+			}
+			.twoDIcon.skipped {
+				animation: zoomOut 0.9s;
+			}
+
+			.visible { visibility: visible }
+
+			@keyframes zoomOut {
+			  from {
+			    opacity: 1;
+			  }
+
+			  50% {
+			    opacity: 0;
+			    transform: scale3d(.3, .3, .3);
+			  }
+
+			  100% {
+			    opacity: 0;
+			  }
+			}
+
+			.zoomOut {
+			  animation-name: zoomOut;
+			}
+
+		</style>		
+	</head>
+	<body>
+		<section class='column five'></section><!--
+	 --><section class='column ninety '>
+	 		<img src='urlab_logo.jpg'>
+	 		<h1>[Trackmania Turbo] Cut-paste tool: UI suggestions</h1>
+	 		<img src='cut-paste-tool.jpg'>
+	 		<h2>Context</h2>
+	 		<p>Based on the results of playtest #03:</p>
+	 		<ul>
+	 			<li>Some players did not know that the cut-paste tool existed</li>
+	 			<li>Some players found the cut-paste tool difficult to use</li>
+	 		</ul>
+	 		<h3>Goals of the prototype:</h3>
+	 		<ol>
+	 			<li>Decrease time before players notice the tool</li>
+	 			<li>Communicate more clearly the difference between CUT and DELETE</li>
+	 			<li>Make it easier to understand the following events:
+	 				<ul>
+	 					<li>Track segment moves from the map to the cut-paste tool (=stored safely)</li>
+	 					<li>Track segment moves from cut-paste tool to the map (=paste)</li>
+	 					<li>Stored track segment is deleted (=skip)</li>
+	 				</ul>
+	 			</li>
+	 		</ol>
+	 		<h3>Interactive prototype:</h3>
+	 	</section><!--
+	 --><section class='column five'></section><!--
+
+	 --><section class='column five'></section><!--
+	 --><section class='column sixty prototype'>
+
+ 		    <canvas id="myCanvas" width="1380" height="720"></canvas>
+
+	 		<div class='categories'>Categories</div>
+
+	 		<div class='splashScreen'>
+	 			<p>Cut-paste tool prototype</p>
+	 			<p>Press the (A) button on your Xbox360/XONE gamepad to start</p>
+	 		</div>
+
+	 		<div class='segments'>Segments</div>
+
+	 		<div class='twoDIcon straight'></div>
+	 		<div class='twoDIcon turn'></div>
+	 		<div class='twoDIcon turn'></div>
+	 		<div class='twoDIcon turn'></div>
+	 		<div class='twoDIcon turn'></div>
+
+	 		<div class='cutPasteTool'>
+	 			Storage
+	 			<div class='twoDIcon'>[...]</div>
+	 			<div class='twoDIcon turn'></div>
+	 			<div class='twoDIcon turn'></div>
+	 			<div class='twoDIcon turn'></div>
+	 		</div>
+
+ 		</section><!--
+
+	 --><section class='column twentythree notes'>
+
+	 	</section><section class='column five'></section><!--
+	 
+	 --><section class='column hundred'></section><!--
+
+     --><section class='column five'></section><!--
+	 --><section class='column ninety '>
+	 		<h3>Suggestions for the cut-paste tool:</h3><ul><li>Change #1: stored elements are displayed horizontally, in order to communicate the visual order or storage</li><li>Change #2: </li></ul>
+	 	</section><!--
+	 --><section class='column five'></section>
+		<script>
+			'use-strict';
+			//instead of the segments in the 3d view fading, ICONS of those segments should appear, then go up and fade
+			//the content of the cut-paste tool is an array, inside each is 0/1/2. Based on the value: nothing/straight/turn
+			//the code above alo
+
+			var gamepads = navigator.getGamepads();
+			var gp;
+			var fps = 60;
+			var scheduled=false;
+			var protoCutPaste = document.getElementsByTagName('section')[4];
+			var children = document.getElementsByTagName('section')[4].children;
+			var canvas = document.getElementById('myCanvas');
+			var context = canvas.getContext('2d');
+			var appState = 1;
+			var placedSegments = 5;
+			var cutPasteToolCursor = 4;
+
+			var textDescription = [
+				'<h3>Functional notes</h3><p>you need an xbox controller (X360 or XOne) plugged in to control the prototype</p>',
+				'<h3>Functional notes</h3><p>Let\'s assume the player has already placed five segments. The last segment placed by the players was this one:</p><hr><p>Note that the prototype only answers to the L1 and R1 buttons:</p><p><b>Press LB to remove a track segment</b></p><p>Press RB to add a track segment</p><p>Press RT to skip a removed segment</p>',
+				'<h3>Functional notes</h3><p>As soon as a segment becomes cut, three animations fire at once:</p><p>- Tool appears via top of the screen</p><p>- segment becomes a 2d icon</p><p>- The icon move up and disappears from the 3d screen, then appears inside the tool</p>'
+			];
+
+			setup();
+			draw();
+
+			function setup() {
+				document.getElementsByTagName('img')[0].style.maxWidth = '20%';
+				document.getElementsByTagName('img')[1].style.maxWidth = '66%';
+				document.getElementsByTagName('img')[0].style.left = '40%';
+				document.getElementsByClassName('prototype')[0].style.cssText = 'outline:2px solid rgb(232,232,232)';
+				
+				createSegment('straight',-384,-500,90);
+				createSegment('turn',-66,-415,90);
+				createSegment('turn',170,-168,-90);
+				createSegment('turn',456,-212,180);
+				createSegment('turn',412,-412,90);
+
+				document.getElementsByClassName('twoDIcon')[0].style.cssText = 'left:130px; top:170px';
+				document.getElementsByClassName('twoDIcon')[1].style.cssText = 'left:480px; top:260px';
+				document.getElementsByClassName('twoDIcon')[2].style.cssText = 'left:660px; top:540px';
+				document.getElementsByClassName('twoDIcon')[3].style.cssText = 'left:960px; top:540px';
+				document.getElementsByClassName('twoDIcon')[4].style.cssText = 'left:960px; top:260px';
+
+				document.getElementsByClassName('twoDIcon')[5].style.cssText = 'left:20px; top:35px';
+				document.getElementsByClassName('twoDIcon')[6].style.cssText = 'left:140px; top:135px';
+				document.getElementsByClassName('twoDIcon')[7].style.cssText = 'left:260px; top:135px';
+				document.getElementsByClassName('twoDIcon')[8].style.cssText = 'left:380px; top:135px';
+
+				context.beginPath();
+				context.strokeStyle = '#009900';
+				context.lineWidth = '3';
+				context.moveTo(840,265);
+				context.lineTo(1300, 110);
+				context.stroke();
+			}
+
+			function draw() {
+				var notes = document.getElementsByClassName('notes')[0];
+
+			    setTimeout(function() {
+			        requestAnimationFrame(draw);
+		        	for(var i= 0; i < gamepads.length; i++) {
+		        		if (gamepads[i] != undefined) {
+		        			gp = navigator.getGamepads()[i];
+	        			}
+						if(!scheduled) { 
+							scheduled=true;
+							setTimeout(function() {
+						        scheduled = false;
+						        padManager();
+					      	}, 290);
+						}
+        			}
+        			switch(appState) {
+						case 0: //prototype is here. Press A to activate your gamepad. You need this browser + an xbox controller 
+							notes.innerHTML = textDescription[0];
+						break;
+						case 1: //default state: in this prototype, only L1 and R1 are usable
+							document.getElementsByClassName('splashScreen')[0].style.visibility = 'hidden';
+							document.getElementsByTagName('canvas')[0].style.visibility = 'visible';
+							notes.innerHTML = textDescription[1];
+						break;
+						case 2: //as soon as a segment is removed, storage appears
+							document.getElementsByTagName('canvas')[0].style.visibility = '';
+							notes.innerHTML = textDescription[2];
+						break;
+					}
+			    }, 1000 / fps);
+			}
+
+			function padManager() {    				
+    			/*for(var i=0; i < gp.buttons.length; i++) {
+    				if(gp.buttons[i].pressed) console.log('appState is now: '+ appState);
+    			}*/
+
+    			if(gp.buttons[0].pressed && appState == 0) {
+    				appState = 1;
+
+    			} else if(gp.buttons[1].pressed && appState !== 0) {
+    				document.getElementsByClassName('twoDIcon')[0].classList.add('up');
+
+    			} else if(gp.buttons[4].pressed && appState !== 0) {
+    				hideSegment();
+    				cutAnimations();
+    				document.getElementsByClassName('cutPasteTool')[0].classList.add('active');
+    				console.log(placedSegments);
+    				if(appState == 1) appState = 2;
+
+    			} else if(gp.buttons[5].pressed && appState !== 0) {
+    				showSegment();
+    				if(placedSegments < 5) pasteAnimations();
+    				if(placedSegments == 5) document.getElementsByClassName('cutPasteTool')[0].classList.remove('active');
+    				console.log(placedSegments);
+    			}
+			}
+
+			function createSegment(_segment, _x, _y, _rotation) {
+				var div = document.createElement('div');
+				var img = document.createElement('img');
+				var x = _x;
+				var y = _y;
+				_segment == 'turn'? img.src = 'track-turn.jpg' : img.src = 'track-straight.jpg';
+				div.style.left = x + 'px';
+				div.style.top = y + 'px';
+				div.classList.add('segmentthreeDView');
+				div.style.transform = 'rotate('+_rotation+'deg)';
+				div.appendChild(img);
+				document.getElementsByClassName('prototype')[0].appendChild(div);
+			}
+
+			function showSegment() {
+				if(placedSegments < 5) {
+				 	placedSegments++;
+					document.getElementsByClassName('segmentthreeDView')[placedSegments-1].classList.remove('active');
+				}
+				console.log('placedSegments = ' + placedSegments);
+			}
+
+			function hideSegment() {
+				if(placedSegments > 0) {
+				 	placedSegments--;
+					document.getElementsByClassName('segmentthreeDView')[placedSegments].classList.add('active');
+				}
+				console.log('placedSegments = ' + placedSegments);
+			}
+
+			function skipSegment() {
+
+			}
+
+			function cutAnimations() {
+				document.getElementsByClassName('twoDIcon')[placedSegments].style.opacity = '1';
+				document.getElementsByClassName('twoDIcon')[placedSegments].classList.remove('down');
+				document.getElementsByClassName('twoDIcon')[placedSegments].classList.add('up');
+				setTimeout(function() { document.getElementsByClassName('twoDIcon')[placedSegments].style.opacity = '0'; }, 250);
+				document.getElementsByClassName('twoDIcon')[placedSegments+cutPasteToolCursor].classList.add('saved');
+			}
+
+			function pasteAnimations() {
+					document.getElementsByClassName('twoDIcon')[placedSegments].style.opacity = '1';
+					setTimeout(function() { document.getElementsByClassName('twoDIcon')[placedSegments].style.opacity = '0'; }, 350);
+					document.getElementsByClassName('twoDIcon')[placedSegments].classList.remove('up');
+					document.getElementsByClassName('twoDIcon')[placedSegments].classList.add('down');
+					document.getElementsByClassName('twoDIcon')[placedSegments+cutPasteToolCursor-1].classList.remove('saved');				
+			}
+
+			/*function cutAnimations() {
+				switch(placedSegments) {
+					case 4: 
+					
+						document.getElementsByClassName('twoDIcon')[4].style.opacity = '1';
+						document.getElementsByClassName('twoDIcon')[4].classList.remove('down');
+						document.getElementsByClassName('twoDIcon')[4].classList.add('up');
+						setTimeout(function() { document.getElementsByClassName('twoDIcon')[4].style.opacity = '0'; }, 250);
+						document.getElementsByClassName('twoDIcon')[5+cutPasteToolCursor].classList.add('saved');
+					break;
+				}
+			}
+
+			function pasteAnimations() {
+			switch(placedSegments) {
+					case 5: 
+						document.getElementsByClassName('twoDIcon')[4].style.opacity = '1';
+						//document.getElementsByClassName('twoDIcon')[4].classList.add('up');
+						setTimeout(function() { document.getElementsByClassName('twoDIcon')[4].style.opacity = '0'; }, 350);
+						document.getElementsByClassName('twoDIcon')[4].classList.remove('up');
+						document.getElementsByClassName('twoDIcon')[4].classList.add('down');
+						document.getElementsByClassName('twoDIcon')[5+cutPasteToolCursor].classList.remove('saved');
+					break;
+				}
+			}*/
+
+			function resetIconPositions() {
+				document.getElementsByClassName('twoDIcon')[0].style.cssText = 'left:130px; top:170px';
+				document.getElementsByClassName('twoDIcon')[1].style.cssText = 'left:480px; top:260px';
+				document.getElementsByClassName('twoDIcon')[2].style.cssText = 'left:660px; top:540px';
+				document.getElementsByClassName('twoDIcon')[3].style.cssText = 'left:960px; top:540px';
+				document.getElementsByClassName('twoDIcon')[4].style.cssText = 'left:960px; top:260px';
+
+				document.getElementsByClassName('twoDIcon')[5].style.cssText = 'left:20px; top:35px';
+				document.getElementsByClassName('twoDIcon')[6].style.cssText = 'left:140px; top:135px';
+				document.getElementsByClassName('twoDIcon')[7].style.cssText = 'left:260px; top:135px';
+				document.getElementsByClassName('twoDIcon')[8].style.cssText = 'left:380px; top:135px';
+			}
+
+			//layout debug
+			for(var i = 0; i < document.getElementsByTagName('section').length; i++) { 
+				//document.getElementsByTagName('section')[i].innerHTML += 'sectionID :' + i;
+				//document.getElementsByTagName('section')[i].style.outline = '3px dashed rgb(232,232,232)';
+			    var r = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+			    var g = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+			    var b = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+				//document.getElementsByTagName('section')[i].style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+			}
+		</script>
+	</body>
+</html>
