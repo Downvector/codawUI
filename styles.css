@@ -36,6 +36,7 @@ time, mark, audio, video {
 
 body {
 	font-family: 'Open Sans', sans-serif;
+	color:rgb(45,45,45);
 }
 
 header {
@@ -53,9 +54,7 @@ header h1 {
 
 section h1 {
 	padding:0 0 1.2em 2em;
-	color:rgb(117,117,117);
 }
-
 
 header a {
 	padding:0.8em;

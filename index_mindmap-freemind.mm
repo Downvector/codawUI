@@ -17,5 +17,72 @@
 <node CREATED="1438527225761" ID="ID_1385195679" MODIFIED="1438527311666" TEXT="Tasks 50%"/>
 <node CREATED="1438527228662" ID="ID_584645095" MODIFIED="1438527311666" TEXT="Tasks 0%"/>
 </node>
+<node CREATED="1440228103870" ID="ID_378152151" MODIFIED="1440229913901" POSITION="left" TEXT="Interview">
+<node CREATED="1440229888793" HGAP="21" ID="ID_1420883577" MODIFIED="1440246147719" TEXT="Interaction-design for other designers&apos; features" VSHIFT="-72">
+<font BOLD="true" NAME="SansSerif" SIZE="12"/>
+<node CREATED="1440229732555" ID="ID_722653357" MODIFIED="1440229758799" TEXT="Website design: player community engagement">
+<node CREATED="1440230532420" HGAP="146" ID="ID_667458710" MODIFIED="1440246086624" TEXT="We wanted to push the groups and vanity aspects, you have a &quot;tutorial completed&apos; counter for modding UT" VSHIFT="-107"/>
+</node>
+</node>
+<node CREATED="1440229913902" HGAP="23" ID="ID_1664120479" MODIFIED="1440246145383" TEXT="Feature design -inventing stuff" VSHIFT="35">
+<font BOLD="true" NAME="SansSerif" SIZE="12"/>
+<node CREATED="1440254090222" ID="ID_1661722090" MODIFIED="1440254108971" TEXT="Learn the team&apos;s work style"/>
+<node CREATED="1440254109510" ID="ID_684415761" MODIFIED="1440254133899" TEXT="Early, bet all on feedback, feedback to every user action. Only then start working on tutorials"/>
+</node>
+<node CREATED="1440230924546" HGAP="43" ID="ID_586114576" MODIFIED="1440246516004" TEXT="User-testing" VGAP="6" VSHIFT="99">
+<font BOLD="true" NAME="SansSerif" SIZE="12"/>
+<node CREATED="1440230934057" HGAP="27" ID="ID_1217476870" MODIFIED="1440249284657" TEXT="Test organization" VSHIFT="-54">
+<node CREATED="1440230943170" ID="ID_504325407" MODIFIED="1440231102841" TEXT="Proposing objectives">
+<node CREATED="1440249238712" HGAP="18" ID="ID_781005666" MODIFIED="1440255327157" TEXT="Epic Games&apos; projects" VSHIFT="-37">
+<node CREATED="1440231102842" HGAP="21" ID="ID_1080966022" MODIFIED="1440246099295" TEXT="Epic Launcher: no info on disk size required to install" VSHIFT="32"/>
+<node CREATED="1440230952913" HGAP="23" ID="ID_893579660" MODIFIED="1440246097159" TEXT="Fortnite: do players realize they can destroy their own constructions (ex: stairs during the livestream)" VSHIFT="-34"/>
+</node>
+<node CREATED="1440249245896" ID="ID_1960178788" MODIFIED="1440255324662" TEXT="Usability" VSHIFT="-21">
+<node CREATED="1440249324560" ID="ID_1409644228" MODIFIED="1440249328132" TEXT="Perception"/>
+<node CREATED="1440249328720" ID="ID_321581399" MODIFIED="1440249331676" TEXT="Attention"/>
+<node CREATED="1440249331911" ID="ID_1312467813" MODIFIED="1440249333364" TEXT="Memory">
+<node CREATED="1440249336464" ID="ID_1211857695" MODIFIED="1440249353109" TEXT="Trackmania Turbo Editor: worked on how many buttons need to appear"/>
+</node>
+</node>
+<node CREATED="1440249251425" ID="ID_197054801" MODIFIED="1440256782779" TEXT="Flow/Rhythm of progression" VSHIFT="-41">
+<node CREATED="1440255283646" ID="ID_422093263" MODIFIED="1440255316171" TEXT="Feedback-logger: emotions: identify unfair deaths, how the controls feel, mid-term motivation"/>
+</node>
+<node CREATED="1440249258304" ID="ID_306870906" MODIFIED="1440256780139" TEXT="Mid/Long-term objectives" VSHIFT="-52">
+<node CREATED="1440255066471" ID="ID_1886395752" MODIFIED="1440255146356" TEXT="Self-Determination Theory (Scott Rigby), competence, autonomy, relatedness"/>
+</node>
+<node CREATED="1440256760427" ID="ID_1133292884" MODIFIED="1440256774879" TEXT="Meeting expectations (set by Marketing)"/>
+</node>
+<node CREATED="1440253423978" HGAP="19" ID="ID_1313019437" MODIFIED="1440253449659" TEXT="Treating data" VSHIFT="42"/>
+<node CREATED="1440253430067" HGAP="19" ID="ID_934292095" MODIFIED="1440253446380" TEXT="Presenting results" VSHIFT="109">
+<node CREATED="1440257741476" ID="ID_634008945" MODIFIED="1440257779016" TEXT="Not just another opinion, but instead say those results come from scientific approach (unemotional, I am emotionally detached from my results)"/>
+<node CREATED="1440257794444" ID="ID_67253988" MODIFIED="1440257819849" TEXT="Not trying to override the game designers&apos; work, just suggestion based on things like Gestalt law"/>
+</node>
+</node>
+<node CREATED="1440228130717" HGAP="46" ID="ID_1764005967" MODIFIED="1440249290640" TEXT="Statistical analysis (n=16)" VSHIFT="-17">
+<node CREATED="1440229852802" ID="ID_1265888839" MODIFIED="1440229878174" TEXT="Analyzing reviews+forum comments"/>
+</node>
+<node CREATED="1440246126102" HGAP="22" ID="ID_1675065269" MODIFIED="1440246289205" TEXT="Academic Theory" VSHIFT="80">
+<font NAME="SansSerif" SIZE="12"/>
+<node CREATED="1440246264653" ID="ID_235143846" MODIFIED="1440246270898" TEXT="Cognitive Psychology">
+<node CREATED="1440246826793" ID="ID_1629061540" MODIFIED="1440246839171" TEXT="I use this pdf">
+<icon BUILTIN="messagebox_warning"/>
+</node>
+<node CREATED="1440253413547" ID="ID_997320878" MODIFIED="1440253417808" TEXT="gestalt theory of perception"/>
+</node>
+<node CREATED="1440246274422" ID="ID_1773763684" MODIFIED="1440246279786" TEXT="Social Theory"/>
+<node CREATED="1440246395405" ID="ID_110999803" MODIFIED="1440246409513" TEXT="User&apos;s mental model">
+<node CREATED="1440246414197" ID="ID_209266051" MODIFIED="1440246443449" TEXT="Most of my knowledge comes from the field: doing those 3 years of user-testing, interviews etc"/>
+</node>
+</node>
+</node>
+<node CREATED="1440246208894" HGAP="18" ID="ID_612937107" MODIFIED="1440246517957" TEXT="Interacting with game teams" VSHIFT="112">
+<font BOLD="true" NAME="SansSerif" SIZE="12"/>
+<node CREATED="1440246522956" HGAP="17" ID="ID_1490141060" MODIFIED="1440257828292" TEXT="explaining UX: my job is to make sure players interact with the game as you the game designer intended" VSHIFT="-30"/>
+<node CREATED="1440257434839" ID="ID_1973187265" MODIFIED="1440257830556" TEXT="Bringing results EARLY has more value than being scientifically correct" VSHIFT="-27"/>
+<node CREATED="1440246587828" HGAP="18" ID="ID_1441296295" MODIFIED="1440257832052" TEXT="Being embedded within dev teams" VSHIFT="-21"/>
+<node CREATED="1440246730362" ID="ID_1397313266" MODIFIED="1440257841052" TEXT="We do not make games easier: example of " VSHIFT="16"/>
+<node CREATED="1440257648661" HGAP="22" ID="ID_1512458600" MODIFIED="1440257839428" TEXT="Building trust before trying to impose your process: first explain that together we are going to save time and money" VSHIFT="28"/>
+</node>
+</node>
 </node>
 </map>
