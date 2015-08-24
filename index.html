@@ -169,8 +169,6 @@
 			}
 
 			function highlightProject(e) {
-				console.dir(e.target.parentNode.children.length);
-
 				if(e.target.nodeName.toLowerCase() == 'td' || e.target.nodeName.toLowerCase() == 'div' && e.target.parentNode.children.length > 1) {
 					for(var i=0; i < e.target.parentNode.getElementsByTagName('div').length; i++) {
 						e.type == 'mouseover' ? e.target.parentNode.getElementsByTagName('div')[i].style.opacity = '1':  e.target.parentNode.getElementsByTagName('div')[i].style.opacity = '0';
