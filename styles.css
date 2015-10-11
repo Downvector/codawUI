@@ -62,22 +62,22 @@ header a {
 	color:black;
 }
 
-a {
+header a {
 	text-decoration: none;
 	/*border:1px solid grey;
 	border-radius:3px;  souncloud style*/
 }
 
-a:active {
+header a:active {
 	opacity:0.2;
 }
 
-a:hover {
+header a:hover {
 	color:black;
 	outline:2px black solid;
 }
 
-a:visited {
+header a:visited {
 	color:rgb(117,117,117);
 }
 

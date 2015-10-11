@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Trackmania Turbo: UI suggestions - Track editor</title>
+		<meta name="author" content="Jean-Luc Potte" />
+		<style media="screen" type="text/css">
+			html, body, div, span, applet, object, iframe,
+			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+			a, abbr, acronym, address, big, cite, code,
+			del, dfn, em, img, ins, kbd, q, s, samp,
+			small, strike, strong, sub, sup, tt, var,
+			b, u, i, center,
+			dl, dt, dd, ol, ul, li,
+			fieldset, form, label, legend,
+			table, caption, tbody, tfoot, thead, tr, th, td,
+			article, aside, canvas, details, embed,
+			figure, figcaption, footer, header, hgroup,
+			menu, nav, output, ruby, section, summary,
+			time, mark, audio, video {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				font-size: 100%;
+				font: inherit;
+				vertical-align: baseline;
+			}
+
+			*,
+			*:before,
+			*:after {
+			  -webkit-box-sizing: border-box;
+			     -moz-box-sizing: border-box;
+			          box-sizing: border-box;
+			}
+
+			.column  {
+				display: inline-block;
+				vertical-align:top;
+			}
+
+			body {
+				font-family: 'Open Sans', sans-serif;
+			}
+
+			.five { width:5%; }
+			.sixteen { width:16.665%; } 
+			.twenty { width:20%; }
+			.twentythree { width:23%; }
+			.twentythreethree { width:33%; }
+			.forty { width:40%; }
+			.sixty { width:67.5%; }
+			.sixtyseven { width:66.66%; }
+			.eighty { width:79.8%; }
+			.ninety { width:90%; }
+			.hundred { width:100%; }
+		</style>		
+	</head>
+	<body>
+		<h1>Pillars of eternity: tooltip display rules</h1>
+		<section class='column forty'>Current build</section><section class='column forty'>Prototype</section>
+
+		<script>
+			'use-strict';
+			var fps = 60;
+			// var gamepads = navigator.getGamepads();
+			// var gp;
+			// var scheduled=false;
+
+			setup();
+			draw();
+
+			function setup() {
+
+			}
+
+			function draw() {
+
+			    setTimeout(function() {
+			        requestAnimationFrame(draw);
+		    //     	for(var i= 0; i < gamepads.length; i++) {
+		    //     		if (gamepads[i] != undefined) {
+		    //     			gp = navigator.getGamepads()[i];
+	     //    			}
+						// if(!scheduled) { 
+						// 	scheduled=true;
+						// 	setTimeout(function() {
+						//         scheduled = false;
+						//         padManager();
+					 //      	}, 240);
+						// }
+      //   			}
+			    }, 1000 / fps);
+			}
+
+			// function padManager() {  
+   //  			if(gp.buttons[0].pressed && appState == 0) {
+   //  				appState = 1;
+
+   //  			} else if(gp.buttons[1].pressed && appState !== 0) {
+   //  				document.getElementsByClassName('twoDIcon')[0].classList.add('up');
+
+   //  			} else if(gp.buttons[4].pressed && appState !== 0) {
+   //  				hideSegment();
+   //  				cutAnimations();
+   //  				document.getElementsByClassName('cutPasteTool')[0].classList.add('active');
+   //  				console.log(placedSegments);
+   //  				if(appState == 1) appState = 2;
+
+   //  			} else if(gp.buttons[5].pressed && appState !== 0) {
+   //  				showSegment();
+   //  				if(placedSegments < 5) pasteAnimations();
+   //  				if(placedSegments == 5) document.getElementsByClassName('cutPasteTool')[0].classList.remove('active');
+   //  				console.log(placedSegments);
+   //  			}
+			// }
+
+			//layout debug
+			for(var i = 0; i < document.getElementsByTagName('section').length; i++) { 
+				//document.getElementsByTagName('section')[i].innerHTML += 'sectionID :' + i;
+				//document.getElementsByTagName('section')[i].style.outline = '3px dashed rgb(232,232,232)';
+			    var r = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+			    var g = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+			    var b = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+				//document.getElementsByTagName('section')[i].style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+			}
+		</script>
+	</body>
+</html>

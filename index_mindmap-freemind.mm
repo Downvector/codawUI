@@ -24,7 +24,8 @@
 <node CREATED="1440254109510" ID="ID_684415761" MODIFIED="1440254133899" TEXT="Early, bet all on feedback, feedback to every user action. Only then start working on tutorials"/>
 <node CREATED="1440229888793" HGAP="21" ID="ID_1420883577" MODIFIED="1440334304644" TEXT="Interaction-design for other designers&apos; features" VSHIFT="-72">
 <font NAME="SansSerif" SIZE="12"/>
-<node CREATED="1440229732555" ID="ID_722653357" MODIFIED="1440229758799" TEXT="Website design: player community engagement">
+<node CREATED="1440229732555" ID="ID_722653357" MODIFIED="1440397919505" TEXT="Website design: player community engagement">
+<icon BUILTIN="info"/>
 <node CREATED="1440230532420" HGAP="146" ID="ID_667458710" MODIFIED="1440246086624" TEXT="We wanted to push the groups and vanity aspects, you have a &quot;tutorial completed&apos; counter for modding UT" VSHIFT="-107"/>
 </node>
 </node>
@@ -32,12 +33,17 @@
 <node CREATED="1440334316866" ID="ID_35739296" MODIFIED="1440335505779" TEXT="wireframes" VSHIFT="-80"/>
 <node CREATED="1440334319706" HGAP="17" ID="ID_603952691" MODIFIED="1440335509394" TEXT="walkthroughs and scenarios" VSHIFT="-44"/>
 <node CREATED="1440335207828" ID="ID_1886612091" MODIFIED="1440335211761" TEXT="competitors analysis">
-<node CREATED="1440335213100" ID="ID_706543118" MODIFIED="1440335308368" TEXT="splatoon: improved the least interesting steps in the user flow for online shooters: moving, from running the game to the servers list, waiting for match to fill-up (note: they don&apos;t show you disconnections to avoid influencing your behavior)"/>
-<node CREATED="1440335313435" ID="ID_430948728" MODIFIED="1440335351504" TEXT="Heroes of the storm: tab-score screen has enough categories that you fille like you&apos;re among the top3 in one category (frog-pond effect)"/>
+<node CREATED="1440335213100" ID="ID_706543118" MODIFIED="1440397964145" TEXT="splatoon: improved the least interesting steps in the user flow for online shooters: moving, from running the game to the servers list, waiting for match to fill-up (note: they don&apos;t show you disconnections to avoid influencing your behavior)">
+<icon BUILTIN="info"/>
+</node>
+<node CREATED="1440335313435" ID="ID_430948728" MODIFIED="1440397968612" TEXT="Heroes of the storm: tab-score screen has enough categories that you fille like you&apos;re among the top3 in one category (frog-pond effect)">
+<icon BUILTIN="info"/>
+</node>
 </node>
 <node CREATED="1440335470338" ID="ID_1299624112" MODIFIED="1440335499266" TEXT="personas" VSHIFT="90">
 <node CREATED="1440335473602" ID="ID_87067228" MODIFIED="1440335494503" TEXT="not used yet but the GDC talk from harmonix on using comics in design documents is great"/>
 </node>
+<node CREATED="1440397930553" ID="ID_1032215136" MODIFIED="1440397933517" TEXT="group discussions"/>
 </node>
 <node CREATED="1440230924546" HGAP="43" ID="ID_586114576" MODIFIED="1440351612917" TEXT="User-testing: the feedback-logger method" VGAP="6" VSHIFT="99">
 <font BOLD="true" NAME="SansSerif" SIZE="12"/>
