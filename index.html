@@ -4,9 +4,9 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<title>Jean-Luc Potte: games user-experience, games user-testing</title>
-		<meta name="description" content="Portfolio of a games ux designer/user-testinger" />
-		<meta name="keywords" content="games ux designer, games UX designer, games user-testinger" />
+		<title>Jean-Luc Potte: games user-experience, games user-filtersContainering</title>
+		<meta name="description" content="Portfolio of a games ux designer/user-filtersContaineringer" />
+		<meta name="keywords" content="games ux designer, games UX designer, games user-filtersContaineringer" />
 		<meta name="author" content="Jean-Luc Potte" />
 		<style media="screen" type="text/css">
 			@import url(http://fonts.googleapis.com/css?family=Quicksand|Open+Sans);
@@ -52,20 +52,39 @@
 			.title {
 				font-size:2em;
 				font-family: 'Quicksand', sans-serif;
+				padding:1em;
 			}
+
+			.mainNav {
+				padding-bottom:1.2em;
+			}
+
+			.filtersContainer {position:relative;}
 
 			.filters {
-			    border-bottom: 1px solid rgb(212,212,212);
-				height:4em;
-				vertical-align: bottom
+				font-size:1.4em;
+				border-bottom: 1px solid black;
+				position:absolute;
+				right:0;
+				bottom:0;
+				min-width:12em;
 			}
 
-			.active {
+			.greetings {
+				font-size:1.4em;
+				padding:4em 1em 4em 1em;
+				text-align: center;
+			}
+
+			.footer {
+				background-color: black;
+				color:white;
+				text-align: center;
+			}
+
+			p { 
 				display:inline;
-				font-weight: bold;
 			}
-
-			p { padding:1em 0 1em 0;}
 
 			body {
 				font-family: 'Open Sans', sans-serif;
@@ -73,6 +92,7 @@
 			}
 
 			hr {
+				margin:0;
 				border: 0;
 			    border-bottom: 1px solid rgb(0,0,0);
 			}
@@ -99,9 +119,9 @@
 				padding:0.9em 0.2em 0.9em 0.2em;
 			}; 
 			
-			td:nth-child(1) { width:40%; }
-			td:nth-child(2) { width:40%; color:rgb(117,117,117); }
-			td:nth-child(3) { width:20%; color:rgb(117,117,117); }
+			td:nth-child(1) { width:45%; }
+			td:nth-child(2) { width:30%; color:rgb(117,117,117); }
+			td:nth-child(3) { width:25%; color:rgb(117,117,117); }
 		</style>		
 	</head>
 	<body>
@@ -110,120 +130,120 @@
 			<div class='col title'>Jean-Luc Potte</div>
 			<div class='col'></div>
 		</div>
-		<div class='row'>
+		<div class='row mainNav'>
 			<div class='col'></div>
-			<div class='col mainNav' style='width:8%'><a href=''>Projects</a></div>
-			<div class='col mainNav' style='width:8%'><a href=''>Resume</a></div>
-			<div class='col mainNav' style='width:8%'><a href=''>Twitter</a></div>
-			<div class='col'></div>
-		</div>
-		<div class='row'>
-			<div class='col'></div>
-			<div class='col' style='width:68%'><hr></div>
+			<div class='col mainNav' style='width:6%'><a href='index.html'>Projects</a></div>
+			<div class='col mainNav' style='width:6%'><a href='https://dl.dropboxusercontent.com/u/5669526/JeanLucPotte_CV.pdf/'>Resume</a></div>
+			<div class='col mainNav' style='width:6%'><a href='https://twitter.com/jlpotte/'>Twitter</a></div>
 			<div class='col'></div>
 		</div>
 		<div class='row'>
 			<div class='col'></div>
-			<div class='col' style='width:68%'>
+			<div class='col' style='width:74%'><hr></div>
+			<div class='col'></div>
+		</div>
+		<div class='row greetings'>
+			<div class='col '></div>
+			<div class='col' style='width:56%'>Hello, I do <a href=''>user-research</a> and <a href=''>interaction design</a>.</div>
+			<div class='col'></div>
+		</div>		
+		<div class='row '>
+			<div class='col '></div>
+			<div class='col filtersContainer' style='width:56%'>
+				<select class='filters'>
+					<option>All</option>
+					<option>User-research</option>
+					<option>Interaction design</option>
+				</select>
+			</div>
+			<div class='col'></div>
+		</div>
+		<div class='row'>
+			<div class='col'></div>
+			<div class='col' style='width:56%'><hr></div>
+			<div class='col'></div>
+		</div>				
+		<div class='row'>
+			<div class='col'></div>
+			<div class='col' style='width:56%'>
+				<table class='projects'>
+					<tr><td><a href=''>Far Cry Primal</a></td><td>Console</td><td>2015<div>, Ubisoft HQ</div></td></tr>
+					<tr><a><td>Trackmania Turbo<div> : view article</div></td></a><td>Console</td><td>2015<div>, Ubisoft HQ</div></td></tr>
+					<tr><td>Might and Magic Heroes 7</td></a><td>PC</td><td>2015<div>, Ubisoft HQ</div></td></tr>
+					<tr><td>Far Cry 4: Valley of the Yetis DLC</td></a><td>Console</td><td>2015<div>, Ubisoft HQ</div></td></tr>
+					<tr></tr>
+					<tr><a><td>Far Cry 4</td></a><td>Console</td><td>2014<div>, Ubisoft HQ</div></td></tr>
+					<tr><td>Watch_Dogs</td><td>Console</td><td>2014<div>, Ubisoft HQ</div></td></tr>					
+					<tr><td>various Ubisoft projects (<a href=''>show</a>)</td><td>Console, PC, mobile</td><td>2014<div>, Ubisoft HQ</div></td></tr>						
+					<tr></tr>
+					<tr><td>GFACE</td><td>Web</td><td>2013<div>, Crytek Frankfurt</div></td></tr>
+					<tr><td>Data Heist</td><td>Console + mobile</td><td>2013<div>, student project</div></td></tr>
+					<tr><td>Occupy Olympus</td><td>Installation</td><td>2013<div>, side project</div></td></tr>
+					<tr></tr>
+					<tr><td>FLY'N</td><td>PC</td><td>2012<div>, Ankama</div></td></tr>
+					<tr><td>Krosmaster Arena</td><td>PC</td><td>2012<div>, Ankama</div></td></tr>
+					<tr><td>Slage</td><td>PC</td><td>2012<div>, Ankama</div></td></tr>
+					<tr><td>KGTC</td><td>Installation</td><td>2012<div>, student project</div></td></tr>
+					<tr><td>Hay and Honor</td><td>Mobile</td><td>2012<div>, student project</div></td></tr>
+					<tr><td>( + )</td><td></td><td></td></tr>
+				</table>
+			</div>
+			<div class='col'></div>			
+		</div>	
+		<div class='row'>
+			<div class='col'></div>
+			<div class='col' style='width:56%'>
+				<hr>
+				<p></p>
+			</div>
+			<div class='col'></div>
+		</div>
+		<div class='row greetings'>
+			<div class='col'></div>
+			<div class='col' style='width:56%'>
+				<p>I started working in the games industry XXyears and YYmonths ago. Of that time, I spent WWyears and VVmonths embedded in development teams.</p>
+			</div>
+			<div class='col'></div>
+		</div>				
+		<div class='row'>
+			<div class='col'></div>
+			<div class='col' style='width:56%'>
 				<div class='row'>
 					<div class='col' style='width:50%; border-right:1px solid rgb(212,212,212); height:16em'>
 						<p>User research</p>
 						<p>Goal: gather insights for gameplay improvement.</p>
-						<p>Method: I organize tests where the dev team gets to observe players interacting with their in-development game.</p>
-						<p><a href=''>Read more</a></p>
+						<p>Method: I organize filtersContainers where the dev team gets to observe players interacting with their in-development game.</p>
 					</div>
 					<div class='col' style='width:50%'>
 						<p>Interaction design</p>
 						<p>Goal: make every click and button press communicate the game designers' intent.</p>
 						<p>Method: I take part in choices made on menus, controls and information display. I then relay those choices to the team via design documents, wireframes or interactive prototypes.</p>
-						<p><a href=''>Read more</a></p>
 					</div>
 				</div>
 			</div>
 			<div class='col'></div>
 		</div>
-		<div class='row '>
-			<div class='col'></div>
-			<div class='col filters' style='width:68%'>
-				<div class='row'>
-					<div class='col' style='width:84%'>View: User-research / Interaction design / <div class='active'>Both</div></div>
-					<div class='col'>[_] Show all projects</div>
-				</div>
-			</div>
-			<div class='col'></div>
-		</div>		
+
 		<div class='row'>
 			<div class='col'></div>
-			<div class='col' style='width:68%'>
-				<table class='projectList'>
-					<tr><a><td>Trackmania Turbo<div> : view article</div></td></a><td>Console</td><td>2015<div>, Ubisoft HQ</div></td></tr>
-					<tr><td>Far Cry 4: Valley of the Yetis DLC</td></a><td>Console</td><td>2015<div>, Ubisoft HQ</div></td></tr>
-					<tr></tr>
-					<tr><a><td>Far Cry 4</td></a><td>Console</td><td>2014<div>, Ubisoft HQ</div></td></tr>
-					<tr><td>The Crew</td><td>Console</td><td>2014<div>, Ubisoft HQ</div></td></tr>
-					<tr><td>Watch_Dogs</td><td>Console</td><td>2014<div>, Ubisoft HQ</div></td></tr>						
-					<tr><td>The Crew: Road Empire</td><td>Mobile</td><td>2014<div>, Ubisoft HQ</div></td></tr>						
-					<tr><td>various Ubisoft projects</td><td>Console, Computer, Mobile</td><td>2014<div>, Ubisoft HQ</div></td></tr>						
-					<tr></tr>
-					<tr><td>GFACE</td><td>Web</td><td>2013<div>, Crytek Frankfurt</div></td></tr>
-					<tr><td>Data Heist</td><td>Console + Mobile</td><td>2013<div>, student project</div></td></tr>
-					<tr><td>Occupy Olympus</td><td>Installation</td><td>2013<div>, side project</div></td></tr>
-					<tr></tr>
-					<tr><td>FLY'N</td><td>Computer</td><td>2012<div>, Ankama</div></td></tr>
-					<tr><td>Krosmaster Arena</td><td>Computer</td><td>2012<div>, Ankama</div></td></tr>
-					<tr><td>Slage</td><td>Computer</td><td>2012<div>, Ankama</div></td></tr>
-					<tr><td>KGTC</td><td>Installation</td><td>2012<div>, student project</div></td></tr>
-					<tr><td>Hay and Honor</td><td>Mobile</td><td>2012<div>, student project</div></td></tr>
-				</table>
-			</div>
-			<div class='col'></div>			
-		</div>		
-		<div class='row'>
-			<div class='col'></div>
-			<div class='col' style='width:50%'>
-				<p>Stats</p>
-				<p>XX GAMES I worked on have been released.</p>
-				<p>11 MONTHS spent embedded in dev teams</p>
-				<p>3 YEARS since I started working in the games industry</p>
-			</div>
+			<div class='col footer' style='width:74%'>Footer: resume, phone number, twitter. + what's on my shelf</div>
 			<div class='col'></div>
 		</div>
-		<div class='row'>
-			<div class='col'></div>
-			<div class='col' style='width:68%'>
-				<p>User Research example: Trackmania Turbo</p>
-				<p></p>
-				<p>Interaction design example: Controlling many units in a strategy game</p>
-				<p></p>
-			</div>
-			<div class='col'></div>
-		</div>
-		<div class='row'>
-			<div class='col'></div>
-			<div class='col' style='width:68%'>Footer: resume, phone number, twitter. + what's on my shelf</div>
-			<div class='col'></div>
-		</div>								
-<!-- 		<header>
-			<h1>Jean-Luc Potte</h1>
-			<a href='index.html'>Projects</a>
-			<a href='https://dl.dropboxusercontent.com/u/6069526/JeanLucPotte_CV.pdf/'>Resume</a> 
-			<a href='https://twitter.com/jlpotte/'>Twitter</a> 
-		</header>
-		<hr> -->
 		<script>
 			'use-strict';
 
 			(function setup() {
 				// debugLayout();
 
-				document.getElementsByClassName('projectList')[0].getElementsByTagName('tr')[2].style.height = '1.8em';
-				document.getElementsByClassName('projectList')[0].getElementsByTagName('tr')[8].style.height = '1.8em';
-				document.getElementsByClassName('projectList')[0].getElementsByTagName('tr')[12].style.height = '1.8em';
+				document.getElementsByClassName('projects')[0].getElementsByTagName('tr')[4].style.height = '1.8em';
+				document.getElementsByClassName('projects')[0].getElementsByTagName('tr')[8].style.height = '1.8em';
+				document.getElementsByClassName('projects')[0].getElementsByTagName('tr')[12].style.height = '1.8em';
 
 				for(var i=0; i < document.getElementsByTagName('tr').length; i++) {
 					document.getElementsByTagName('tr')[i].addEventListener('mouseover', highlightProject, false);
 					document.getElementsByTagName('tr')[i].addEventListener('mouseout', highlightProject, false);
 				}
+				//unfinished: waiting on JSON data formatting of projects
 
 			})();
 
@@ -239,20 +259,23 @@
 				}
 			}
 
-			function debugLayout() {
-				for(var i = 0; i < document.getElementsByClassName('col').length; i++) {
-				    var r = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
-				    var g = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
-				    var b = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
-					document.getElementsByClassName('col')[i].style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
-				}
+			function addSpaceBetweenYears() {
+				//unfinished: waiting on JSON data formatting of projects
+			}
+
+			function showVariousUbiProjects() {
+
+			}
+
+			function countReleasedGames() {
+				//unfinished: waiting on JSON data formatting of projects
 			}
 
 			function countMonthsSince(startDate) {
-
+				//unfinished: waiting on JSON data formatting of projects
 			}
 
-			// function updateFilters(e) {
+			// function updateFilters(e) { //unfinished unsure desired behavior
 			// 	if (e.target.nodeName.toLowerCase() == 'a') {
 			// 		var filters = document.getElementsByTagName('section')[10].getElementsByTagName('a'); //unifinished transform into a getelementbyClass('filters')
 			// 		for (var i=0; i < filters.length; i++) {
@@ -262,6 +285,15 @@
 			// 		e.target.classList.add('active');
 			// 	}
 			// }
+
+			function debugLayout() {
+				for(var i = 0; i < document.getElementsByClassName('col').length; i++) {
+				    var r = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+				    var g = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+				    var b = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+					document.getElementsByClassName('col')[i].style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+				}
+			}
 		</script>
 	</body>
 </html>
