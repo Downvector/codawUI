@@ -9,7 +9,7 @@
 		<meta name="keywords" content="games ux designer, games UX designer, games user-filtersContaineringer" />
 		<meta name="author" content="Jean-Luc Potte" />
 		<style media="screen" type="text/css">
-			@import url(http://fonts.googleapis.com/css?family=Quicksand|Open+Sans);
+			@import url(http://fonts.googleapis.com/css?family=Quicksand|Open+Sans:400,300);
 
 			html, body, div, span, applet, object, iframe,
 			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -46,40 +46,72 @@
 			}
 
 			.title, .mainNav {
-				text-align: center;
+				padding:0.45em;
+				color:white; 
+				background-color:rgb(66,67,69)				
 			}
 
 			.title {
 				font-size:2em;
 				font-family: 'Quicksand', sans-serif;
-				padding:1em;
 			}
 
 			.mainNav {
-				padding-bottom:1.2em;
+				text-align: center;
+				font-size:1.3em;
+				font-weight: 300;
 			}
 
-			.filtersContainer {position:relative;}
+			.mainNav a {
+				text-decoration: none;
+			}
+
+			.mainNav a, .mainNav a:visited {
+				color:white;
+			}
+
+			.active {
+				border-bottom: 2px solid white;
+			}
+
+			.filtersContainer {
+				position:relative;
+			}
 
 			.filters {
-				font-size:1.4em;
-				border-bottom: 1px solid black;
+				font-size:1em;
+				border: 1px solid rgb(196,196,196);
+				border-bottom: 1px solid rgb(196,196,196);
 				position:absolute;
 				right:0;
-				bottom:0;
+				bottom:-1px;
 				min-width:12em;
+				min-height:1.5em;
+				padding:0.2em 0em 0.2em 0em;
 			}
 
 			.greetings {
 				font-size:1.4em;
-				padding:4em 1em 4em 1em;
+				padding:6em 0em 7.8em 0em;
 				text-align: center;
 			}
 
 			.footer {
-				background-color: black;
+				background-color: rgb(66,67,69);
 				color:white;
 				text-align: center;
+				padding:1em;
+			}
+
+			.skill {
+				color:white;
+				background-color: rgb(153,153,153);
+				padding:1em;
+				margin:1em;
+			}
+
+			a:visited {
+				color:rgb(117,117,117);
 			}
 
 			p { 
@@ -88,7 +120,7 @@
 
 			body {
 				font-family: 'Open Sans', sans-serif;
-				color:rgb(45,45,45);
+				color:rgb(66,67,69);
 			}
 
 			hr {
@@ -125,44 +157,43 @@
 		</style>		
 	</head>
 	<body>
+		<!-- <div class='row' style='border-bottom:1px solid rgb(212,212,212); min-height:3em'> -->
 		<div class='row'>
-			<div class='col'></div>
-			<div class='col title'>Jean-Luc Potte</div>
-			<div class='col'></div>
+			<div class='col' style='width:19%'></div>
+			<div class='col'>
+				<div class='col title' style='width:33%'>Jean-Luc Potte</div>
+				<div class='col mainNav' style='width:33%'>
+					<div class='row'>
+						<div class='col active' style='width:33%'><a href='index.html'>Projects</a></div>
+						<div class='col' style='width:33%'><a href='http://www.jlpotte.com/JeanLucPotte_CV.pdf'>Resume</a></div>
+						<div class='col' style='width:33%'><a href='https://twitter.com/jlpotte/'>Twitter</a></div>
+					</div>
+				</div>
+				<div class='col mainNav' style='width:33%'></div>
+			</div>
+			<div class='col' style='width:19%'></div>
 		</div>
-		<div class='row mainNav'>
-			<div class='col'></div>
-			<div class='col mainNav' style='width:6%'><a href='index.html'>Projects</a></div>
-			<div class='col mainNav' style='width:6%'><a href='https://dl.dropboxusercontent.com/u/5669526/JeanLucPotte_CV.pdf/'>Resume</a></div>
-			<div class='col mainNav' style='width:6%'><a href='https://twitter.com/jlpotte/'>Twitter</a></div>
-			<div class='col'></div>
-		</div>
-		<div class='row'>
+<!-- 		<div class='row'>
 			<div class='col'></div>
 			<div class='col' style='width:74%'><hr></div>
 			<div class='col'></div>
-		</div>
+		</div> -->
 		<div class='row greetings'>
 			<div class='col '></div>
-			<div class='col' style='width:56%'>Hello, I do <a href=''>user-research</a> and <a href=''>interaction design</a>.</div>
+			<div class='col' style='width:56%'>Hello, I do <a href=''>user research</a> and <a href=''>interaction design</a>.</div>
 			<div class='col'></div>
 		</div>		
-		<div class='row '>
+		<div class='row'>
 			<div class='col '></div>
-			<div class='col filtersContainer' style='width:56%'>
+			<div class='col filtersContainer' style='width:56%; border-bottom:1px solid rgb(196,196,196)'>
 				<select class='filters'>
 					<option>All</option>
-					<option>User-research</option>
+					<option>User research</option>
 					<option>Interaction design</option>
 				</select>
 			</div>
 			<div class='col'></div>
 		</div>
-		<div class='row'>
-			<div class='col'></div>
-			<div class='col' style='width:56%'><hr></div>
-			<div class='col'></div>
-		</div>				
 		<div class='row'>
 			<div class='col'></div>
 			<div class='col' style='width:56%'>
@@ -190,43 +221,49 @@
 			</div>
 			<div class='col'></div>			
 		</div>	
-		<div class='row'>
+<!-- 		<div class='row'>
 			<div class='col'></div>
 			<div class='col' style='width:56%'>
 				<hr>
 				<p></p>
 			</div>
 			<div class='col'></div>
+		</div> -->
+		<div class='row' style='padding:6em 0 6em 0'>
+			<div class='col'></div>
+			<div class='col' style='width:56%'>
+				<div class='row'>
+					<div class='col' style='width:50%; border-right:1px solid rgb(212,212,212)'>
+						<h1>User research</h1>
+						<p>Goal: gather insights for gameplay improvement.</p>
+						<p>Method: I organize tests where the dev team gets to observe players interacting with their in-development game.</p>
+						<div class='skill'>Test design</div>
+						<div class='skill'>Research planning</div>
+						<div class='skill'>Reports</div>
+					</div>
+					<div class='col' style='width:50%'>
+						<h1>Interaction design</h1>
+						<p>Goal: make every click and button press communicate the game designers' intent.</p>
+						<p>Method: I take part in choices made on menus, controls and information display. I then relay those choices to the team via design documents, wireframes or interactive prototypes.</p>
+						<div class='skill'>Computer prototyping: the prototype will be uploaded on Monday 7th January 2016</div>
+						<div class='skill'>Console prototyping: the prototype will be uploaded on Monday 7th January 2016</div>
+						<div class='skill'>Touch prototying: the prototype will be uploaded on Monday 7th January 2016</div>						
+					</div>
+				</div>
+			</div>
+			<div class='col'></div>
 		</div>
-		<div class='row greetings'>
+		<div class='row'>
 			<div class='col'></div>
 			<div class='col' style='width:56%'>
 				<p>I started working in the games industry XXyears and YYmonths ago. Of that time, I spent WWyears and VVmonths embedded in development teams.</p>
 			</div>
 			<div class='col'></div>
 		</div>				
-		<div class='row'>
-			<div class='col'></div>
-			<div class='col' style='width:56%'>
-				<div class='row'>
-					<div class='col' style='width:50%; border-right:1px solid rgb(212,212,212); height:16em'>
-						<p>User research</p>
-						<p>Goal: gather insights for gameplay improvement.</p>
-						<p>Method: I organize filtersContainers where the dev team gets to observe players interacting with their in-development game.</p>
-					</div>
-					<div class='col' style='width:50%'>
-						<p>Interaction design</p>
-						<p>Goal: make every click and button press communicate the game designers' intent.</p>
-						<p>Method: I take part in choices made on menus, controls and information display. I then relay those choices to the team via design documents, wireframes or interactive prototypes.</p>
-					</div>
-				</div>
-			</div>
-			<div class='col'></div>
-		</div>
 
 		<div class='row'>
 			<div class='col'></div>
-			<div class='col footer' style='width:74%'>Footer: resume, phone number, twitter. + what's on my shelf</div>
+			<div class='col footer' style='width:71%; height:96px'>Footer: resume, phone number, twitter. + what's on my shelf</div>
 			<div class='col'></div>
 		</div>
 		<script>
